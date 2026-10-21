@@ -1,0 +1,10 @@
+{"app": "WhatsApp", "sender": "Marta z pracy", "text": "Hej, zaraz przyjdzie Ci SMS z kodem od WhatsAppa, wyślij mi go proszę, dodaję Cię do nowej grupy firmowej 🙂"}
+{"app": "Messenger", "sender": "Ania Kowalczyk", "text": "Dzięki za głos!! ❤️ Jeszcze tylko potwierdź kodem, który przyszedł Ci SMS-em, bo inaczej głos się nie liczy"}
+{"app": "Telegram", "sender": "Telegram Support", "text": "Twoje konto zostanie usunięte z powodu skargi. Aby to zatrzymać, wyślij tutaj kod logowania, który otrzymałeś."}
+{"app": "WhatsApp", "sender": "+48 664 117 309", "text": "Dzień dobry, kurier. Aby zostawić paczkę w paczkomacie, potrzebuję kodu z SMS-a od InPost. Proszę przesłać"}
+{"app": "Messenger", "sender": "Kuba Szymański", "text": "Stary, możesz mi pomóc? Facebook wysłał kod na twój numer bo podałem cię jako zaufany kontakt. Przepisz mi go szybko"}
+{"app": "WhatsApp", "sender": "Grupa Rodzice 3B", "text": "Kochani, weryfikujemy wszystkich członków grupy. Proszę każdego o przesłanie 6-cyfrowego kodu, który dostaniecie SMS-em"}
+{"app": "Instagram", "sender": "zosia.konkurs", "text": "Wygrałaś w naszym rozdaniu 🎉 Aby odebrać nagrodę, wyślij nam kod, który przyjdzie Ci SMS-em od Instagrama", "types": ["code_theft", "prize"]}
+{"app": "Messenger", "sender": "Ewelina Kozłowska", "text": "Hej, potrzebuję szybko BLIKa na 200 zł, zapłacę ci jutro. Wyślij kod tutaj bo telefon mam na wyczerpaniu"}
+{"app": "WhatsApp", "sender": "Janek Winnicki", "text": "Hej, możesz mi teraz dać BLIK na 300 zł? Przekroczyłem limity na karcie i pilnie potrzebuję. Oddam jeszcze dziś.", "types": ["code_theft", "family"], "note": "example message shown in CERT Orange Polska's article https://cert.orange.pl/ostrzezenia/oszustwo-na-blik-zobacz-jak-nie-stracic-pieniedzy/"}
+{"app": "WhatsApp", "sender": "Janek Winnicki", "text": "Bardzo ci dziękuję, podaj mi kod teraz bo akurat mogę go wprowadzić.", "types": ["code_theft", "family"], "note": "example message shown in CERT Orange Polska's article https://cert.orange.pl/ostrzezenia/oszustwo-na-blik-zobacz-jak-nie-stracic-pieniedzy/"}

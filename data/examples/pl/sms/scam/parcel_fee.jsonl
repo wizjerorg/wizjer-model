@@ -1,0 +1,44 @@
+{"sender": "InPost", "text": "InPost: Twoja przesylka podlega oplatom celnym (5,00 zl), ktore nalezy uiscic za posrednictwem https://inpost-clo.top/pl/odprawa", "campaign": "pl-inpost-customs"}
+{"sender": "InPost", "text": "Twoja paczka nr 6942 1180 3375 podlega oplacie celnej 4,89 zl. Bez oplaty zostanie zwrocona do nadawcy w ciagu 48h: inpost-odprawa.cfd/pay", "campaign": "pl-inpost-customs"}
+{"sender": "Inpost", "text": "Przesyłka zatrzymana w urzędzie celnym. Uiść należność 6,20 zł, aby kontynuować doręczenie: https://odprawa-inpost.info/s/8KQ2", "campaign": "pl-inpost-customs"}
+{"sender": "INPOST", "text": "INPOST: Twoja paczka wymaga doplaty 3,67 zl. Zaplac, aby ja otrzymac: inp0st-pay.pl", "campaign": "pl-inpost-topup"}
+{"sender": "+48 571 302 846", "text": "Twoja paczka dotarła do magazynu, ale nie mogliśmy jej dostarczyć z powodu nieprawidłowego adresu. Potwierdź adres w ciągu 12 godzin: https://is.gd/kQ7pZs", "campaign": "pl-parcel-address"}
+{"sender": "+48 690 114 382", "text": "Nie udalo sie doreczyc przesylki - brak numeru lokalu. Uzupelnij adres do 18:00 dzisiaj, w przeciwnym razie paczka wroci do nadawcy: https://bit.ly/3Pq8uVt", "campaign": "pl-parcel-address"}
+{"sender": "Inpost", "text": "Paczka zostala wyslana na Twoj numer telefonu. Wybierz paczkomat odbioru: https://inpostpl.lol/odbior", "campaign": "pl-inpost-whatsapp"}
+{"sender": "Inpost", "text": "InPost: czeka na Ciebie przesylka. Wybierz Paczkomat i potwierdz numer telefonu, aby ja odebrac: inpostpl.mem/p/7731", "campaign": "pl-inpost-whatsapp", "hard": true}
+{"sender": "Poczta", "text": "Witaj, Twoja przesylka zostala zatrzymana. Prosimy o uregulowanie kosztow pod tym linkiem: poczta.pl-odbior.info Dziekujemy .", "campaign": "pl-poczta-held"}
+{"sender": "+48 735 409 228", "text": "Poczta Polska Twoja paczka czeka na dostawę. Kliknij link https://bit.ly/4gk2LmQ, aby potwierdzić opłaty w wysokości 7,99 Złoty", "campaign": "pl-poczta-fee"}
+{"sender": "PocztaPL", "text": "Poczta Polska: przesyłka PL30482911735 oczekuje na opłatę za ponowne doręczenie (2,99 zł). Opłać do końca dnia: https://pocztex-dostawa.top/pl", "campaign": "pl-poczta-fee"}
+{"sender": "Pocztex", "text": "Pocztex: Kurier nie mogl doreczyc paczki. Zaplanuj nowa dostawe (oplata 1,49 zl): https://pocztex24.click/dostawa"}
+{"sender": "verify-DPD", "text": "DPD: weryfikacja adresu niespelniona. Twoja przesylka zostala wstrzymana. Zaktualizuj dane: https://dpd-pl.postap.qpon", "campaign": "pl-dpd-verify"}
+{"sender": "verify-sms", "text": "DPD Polska: paczka 0123 9945 8810 jest reprogramowana. Oplata za ponowna dostawe 0,99 EUR: dpd-redelivery.icu", "campaign": "pl-dpd-verify"}
+{"sender": "+212 6 41 88 20 57", "text": "DPD: Twoja paczka czeka w centrum dystrybucji. Potwierdz adres i zaplac 1,20 zl za dostawe: https://dpd.track-pl.xyz", "campaign": "pl-dpd-verify"}
+{"sender": "DHL", "text": "DHL: Twoja paczka nie mogla zostac dostarczona z powodu nieoplaconej naleznosci (1,08 zl). Ureguluj ja tutaj: https://dhl-pl.delivery-fix.top"}
+{"sender": "DHL Express", "text": "DHL Express: Przesylka miedzynarodowa wymaga oplacenia cla i VAT w kwocie 12,30 zl. Termin: 24h. https://dhl-oplaty.site/pl/clo"}
+{"sender": "+48 512 607 193", "text": "Kurier GLS: brak mozliwosci doreczenia. Prosimy o potwierdzenie danych i oplate 2,50 zl za ponowna probe doreczenia: gls-pl.support-paczka.com"}
+{"sender": "ORLEN Paczka", "text": "ORLEN Paczka: przesylka czeka w automacie, ale wymaga doplaty 3,20 zl za przekroczenie gabarytu. Oplac: orlenpaczka-doplata.info"}
+{"text": "Twoja paczka jest w drodze, ale brakuje doplaty za przesylke (1,99 zl). Jesli nie zaplacisz w ciagu 24 godzin, paczka zostanie zutylizowana. https://cutt.ly/paczka-pl"}
+{"sender": "InPost", "text": "InPost: Ostatnie przypomnienie! Paczka zostanie zwrocona jutro. Odpowiedz 1, aby aktywowac link, a nastepnie potwierdz odbior: inpost-odbior.click/pl", "campaign": "pl-reply-activate"}
+{"sender": "+48 669 205 731", "text": "Poczta Polska: Twoja przesylka nie moze zostac doreczona. Odpisz TAK na te wiadomosc, zamknij ja i otworz ponownie, aby aktywowac link: https://poczta-polska.redelivery-pl.top", "campaign": "pl-reply-activate"}
+{"sender": "InPost", "text": "1nPost: paczka oczekuje na odbior. Wymagana weryfikacja odbiorcy 0,01 zl kartą: https://lnpost-weryfikacja.pl.eu.cc"}
+{"text": "I n P o s t: Twoja przesyłka czeka na dopłatę 2,65 zł. Szczegóły: inpost[.]pl-dostawa[.]info"}
+{"sender": "Paczka", "text": "Przesylka nr 694211830044 zostala zatrzymana w sortowni z powodu niepelnego adresu. Kliknij, aby zaktualizowac: https://tinyurl.com/odbior-paczki-pl"}
+{"sender": "InPost", "text": "Szanowny Kliencie, Twoja paczka nie zostala odebrana z Paczkomatu. Aby przedluzyc termin odbioru, oplac 1,99 zl: https://inpost-przedluzenie.top"}
+{"sender": "+48 799 330 412", "text": "Twoja paczka z Allegro utknela w magazynie InPost - brak oplaty za magazynowanie 4,50 zl. Zaplac teraz: https://e.vg/InPostPL"}
+{"sender": "DPD", "text": "DPD Polska: Szanowny odbiorco, paczka z Chin wymaga odprawy celnej. Należność: 9,87 zł. Opłać do 23:59: dpd-celnik.sbs"}
+{"sender": "UPS", "text": "UPS: Twoja przesylka 1Z84W29P6812 oczekuje na uiszczenie oplaty importowej 18,40 zl. Zaplac online, aby uniknac zwrotu: ups-pl-clearance.com/pay"}
+{"sender": "FedEx", "text": "FedEx: nie mozemy dostarczyc paczki, adres nie zostal rozpoznany. Zaktualizuj adres i uiszcz oplate manipulacyjna 1,50 zl: fedex-pl.addresscheck.top"}
+{"sender": "InPost", "text": "InPost: Twoja paczka zostala przekierowana do innego Paczkomatu z powodu awarii. Potwierdz nowy adres odbioru i kod w aplikacji: https://inpost-mobile.app-pl.cc"}
+{"sender": "+48 604 219 885", "text": "Paczka czeka. Doplata 2,10zl. Link: http://pczk-pl.top/a8"}
+{"sender": "Poczta", "text": "Poczta Polska: list polecony z urzędu nie został doręczony. Aby otrzymać awizo elektroniczne, opłać 1,00 zł: https://poczta-awizo.info/e-awizo"}
+{"text": "Twoja paczka 💌 czeka na Ciebie! Odbierz ja po potwierdzeniu adresu i oplaceniu dostawy 0,99 zl ➡️ https://shorturl.at/pAczka"}
+{"sender": "InPost", "text": "Zamówienie z Temu: paczka nie mieści się w Paczkomacie. Wybierz kuriera (dopłata 3,99 zł): https://inpost-kurier24.top/zmiana"}
+{"sender": "DHL", "text": "Twoja przesylka zostala zatrzymana z powodu awarii systemu DHL. Aby uniknac opoznienia, potwierdz dane i oplac ponowna wysylke 2 zl: https://dhl-awaria.click"}
+{"sender": "Poczta Polska", "text": "Przesylka PL30418827640 nie zostala odebrana w terminie. Zostanie zwrocona za 2 dni. Aby przedluzyc awizo, zaplac 1,20 zl: pocztapolska-awizo.cfd"}
+{"sender": "+48 532 118 064", "text": "Ostatnie powiadomienie: przesylka zostanie zniszczona dzisiaj o 20:00. Prosimy o oplate 1,79 zl: https://s.id/paczka-pl"}
+{"sender": "InPost", "text": "InPost: Kod odbioru Twojej paczki wygasl. Wygeneruj nowy po potwierdzeniu karty platniczej: https://inpost-kod.pl-odbior.xyz"}
+{"sender": "DPD", "text": "DPD: paczka od Zalando nie mogla byc doreczona - kierowca nie zastal odbiorcy. Wybierz nowy termin i oplac dostawe (2,49 zl): dpdpl-termin.info"}
+{"sender": "InPost", "text": "lnPost: Twoja przesyIka czeka na odbiór. Uzupełnij dane i dopłać 1,25 zł: https://inp0st-pl.top/odbierz"}
+{"sender": "Pocztex", "text": "PocztexKurier48: zmiana adresu doreczenia wymaga potwierdzenia. Kliknij: http://pocztex.verify-adres.buzz i podaj dane karty do weryfikacji (0 zl)."}
+{"sender": "+48 881 402 736", "text": "Hej, mam Twoja paczke w aucie ale adres jest niepełny 🙂 potwierdź tu i dopłać za dostawę 2,90 zł https://bit.ly/kurier-dostawa", "hard": true}
+{"text": "Paczkomat WAW204M jest pelny. Twoja paczka zostanie dostarczona kurierem po oplaceniu roznicy 3,15 zl: https://paczkomat-kurier.pl.eu.cc"}

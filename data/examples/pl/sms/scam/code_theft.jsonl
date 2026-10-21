@@ -1,0 +1,25 @@
+{"sender": "+48 512 774 203", "text": "Cześć, przez pomyłkę wysłałem na Twój numer 6-cyfrowy kod. Możesz mi go odesłać? To pilne, dzięki!", "campaign": "pl-code-by-mistake"}
+{"sender": "+48 697 140 382", "text": "Hej, sorki, podałem zły numer przy rejestracji i kod przyszedł do Ciebie. Prześlesz mi go? 🙏", "campaign": "pl-code-by-mistake"}
+{"sender": "+48 733 509 116", "text": "Dzien dobry, dostal Pan przed chwila SMS z kodem? To moj kod do WhatsAppa, prosze go przepisac tutaj, bo nie moge sie zalogowac.", "campaign": "pl-code-by-mistake"}
+{"sender": "+48 881 230 547", "text": "Aby odebrac przelew od kupujacego, wygeneruj kod BLIK w aplikacji i odeslij go w odpowiedzi na ten SMS. Srodki zostana zaksiegowane natychmiast."}
+{"sender": "+48 604 612 790", "text": "Siema, mozesz mi podeslac BLIKa na 300 zl? Karta mi nie dziala, oddam wieczorem. Pisz kod tu", "types": ["code_theft", "family"]}
+{"sender": "+48 515 088 341", "text": "Głosowanie w konkursie! Pomóż mojej siostrzenicy wygrać stypendium 🏆 Zagłosuj tutaj i potwierdź numerem telefonu oraz kodem z SMS: https://glosuj-konkurs.top/k/58"}
+{"sender": "+48 791 006 218", "text": "Twoj kod do Telegrama zostanie zaraz wyslany. Prosimy przekazac go konsultantowi, aby zweryfikowac konto i uniknac jego usuniecia."}
+{"sender": "Weryfikacja", "text": "Weryfikacja odbiorcy srodkow: wpisz kod, ktory otrzymasz w nastepnym SMS-ie, na stronie https://odbierz-srodki.top/v. Kod nie sluzy do platnosci."}
+{"sender": "+48 664 117 309", "text": "Dzień dobry, kurier InPost. Proszę podać kod, który za chwilę przyjdzie SMS-em – bez niego nie mogę zostawić paczki pod drzwiami.", "types": ["code_theft", "parcel_fee"]}
+{"sender": "OLX", "text": "OLX: aby otrzymac platnosc od kupujacego, przepisz kod autoryzacyjny z kolejnej wiadomosci na stronie: https://olx-wyplata.pl.eu.cc", "types": ["code_theft", "marketplace"]}
+{"sender": "+48 722 405 913", "text": "Pani Ewo, tu Kasia z przedszkola. Robimy zbiórkę na prezent dla pani dyrektor, wyślij proszę BLIK na 50 zł, kod odpisz mi tutaj 💐", "hard": true}
+{"sender": "+48 502 773 640", "text": "Wygrales voucher 500 zl do Rossmanna! Aby go aktywowac, odeslij kod, ktory przyjdzie od nadawcy Rossmann.", "types": ["code_theft", "prize"]}
+{"sender": "+48 575 230 618", "text": "Dzień dobry, jestem z Vinted. Pana konto ma zablokowaną wypłatę. Proszę podać kod weryfikacyjny z SMS, aby odblokować środki.", "types": ["code_theft", "marketplace"]}
+{"sender": "Signal", "text": "Signal: Twoje konto zostanie usuniete z powodu podejrzanej aktywnosci. Odpowiedz kodem weryfikacyjnym, ktory zaraz otrzymasz, aby je zachowac."}
+{"sender": "+48 690 287 431", "text": "Kochanie, wyślij mi proszę kod który Ci przyszedł od Facebooka, robię odzyskiwanie konta, mój telefon nie działa", "types": ["code_theft", "family"]}
+{"sender": "Bezpieczen", "text": "Twoje konto Allegro jest w trakcie przejecia. Aby je zablokowac, przekaz nam kod z SMS od Allegro. Konsultant: 22 113 40 92."}
+{"sender": "+48 799 503 228", "text": "Kurier DPD: kod odbioru paczki wysłaliśmy na Twój numer. Odeślij go w odpowiedzi, abyśmy mogli potwierdzić doręczenie.", "types": ["code_theft", "parcel_fee"]}
+{"sender": "+48 536 412 009", "text": "Hej, tu Marta z pracy 😊 Zmieniłam numer. Przyjdzie Ci zaraz kod z WhatsAppa – podeślij mi go, to doda Cię do grupy firmowej."}
+{"sender": "+48 607 128 445", "text": "Twój numer wygrał w loterii operatora. Aby odebrać nagrodę, przepisz 6-cyfrowy kod, który otrzymasz od banku, na stronie: https://loteria-operatora.top", "types": ["code_theft", "prize"]}
+{"sender": "+48 666 210 734", "text": "Potrzebuje pilnie BLIK 200zl na taxi, telefon mi pada, oddam jutro. Wyslij kod na ten nr", "types": ["code_theft", "family"]}
+{"sender": "+48 512 902 331", "text": "Dzień dobry, sprzedaje Pani wózek na OLX? Zapłaciłem już przez OLX Dostawę, proszę tylko podać kod który dostała Pani SMS-em, żeby kurier mógł przyjechać.", "types": ["code_theft", "marketplace"]}
+{"sender": "+48 733 016 852", "text": "Zaglosuj na mojego syna w konkursie talentow 🎤 to zajmie 10 sekund: https://talenty-glosowanie.click – trzeba potwierdzic numer telefonu kodem z SMS."}
+{"sender": "WhatsApp", "text": "WhatsApp: Twoje konto zostanie zawieszone. Aby potwierdzic wlasnosc, odpowiedz na te wiadomosc kodem rejestracyjnym, ktory otrzymales."}
+{"sender": "+48 604 330 187", "text": "Bank prosi o weryfikację przelewu przychodzącego. Wygeneruj BLIK i przekaż go konsultantowi pod numerem 22 290 31 44.", "types": ["code_theft", "bank"]}
+{"sender": "+48 791 330 462", "text": "Witaj, tu administrator grupy osiedlowej. Weryfikujemy członków – wyślij kod, który zaraz dostaniesz SMS-em, inaczej zostaniesz usunięty z grupy."}

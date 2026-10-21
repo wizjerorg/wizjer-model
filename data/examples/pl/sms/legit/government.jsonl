@@ -1,0 +1,22 @@
+{"sender": "ALERT RCB", "text": "ALERT RCB: Uwaga! W nocy 22/23.10 silny wiatr do 90 km/h. Zabezpiecz rzeczy na balkonie, unikaj przebywania pod drzewami. Informacje: gov.pl/rcb", "hard": true}
+{"sender": "ALERT RCB", "text": "ALERT RCB: Ostrzezenie przed upalem. Pij duzo wody, unikaj wysilku w godz. 11-16, nie zostawiaj dzieci i zwierzat w samochodzie.", "hard": true}
+{"sender": "gov.pl", "text": "Kod autoryzacyjny Profilu Zaufanego: 728104. Operacja: podpisanie dokumentu WNIOSEK O DOWOD OSOBISTY. Nie podawaj kodu innym osobom.", "hard": true}
+{"sender": "e-Recepta", "text": "Kod Twojej e-recepty: 4410. Wykupisz ja w aptece podajac kod i numer PESEL. Szczegoly na pacjent.gov.pl", "hard": true}
+{"sender": "e-Skierowanie", "text": "Kod Twojego e-skierowania: 7721. Termin wizyty umowisz w wybranej placowce podajac kod i PESEL."}
+{"sender": "Urzad Miasta", "text": "UM Krakow: Twoj dowod osobisty jest gotowy do odbioru w Urzedzie Miasta, os. Zgody 2. Zabierz poprzedni dowod.", "hard": true}
+{"sender": "Paszport", "text": "Paszport gotowy do odbioru w Punkcie Paszportowym Mazowieckiego Urzedu Wojewodzkiego, ul. Andersa 5. Odbierz osobiscie z dokumentem tozsamosci."}
+{"sender": "ZUS", "text": "ZUS: Twoj wniosek o swiadczenie 800 plus zostal rozpatrzony. Informacje o przyznaniu swiadczenia znajdziesz na Platformie Uslug Elektronicznych ZUS.", "hard": true}
+{"sender": "PUE ZUS", "text": "Kod weryfikacyjny do logowania na PUE ZUS: 330 518. Kod jest wazny 10 minut.", "hard": true}
+{"sender": "mObywatel", "text": "mObywatel: Kod weryfikacyjny do dodania urzadzenia: 41 20 77. Jesli to nie Ty, nie wpisuj kodu i zgloś sprawe na 8080.", "hard": true}
+{"sender": "Urzad Skarbowy", "text": "Twoje zeznanie PIT-37 zostalo zlozone w Twoim e-PIT. Zwrot nadplaty 640,00 zl zostanie przekazany na rachunek wskazany w zeznaniu.", "hard": true}
+{"sender": "Gmina", "text": "Gmina Wieliczka: Przypominamy o odbiorze odpadow wielkogabarytowych w Twojej okolicy w sobote 25.10. Wystaw je do 6:00."}
+{"sender": "PKW", "text": "Wybory do rad gmin 2026: lokal wyborczy dla Twojego adresu to Szkola Podstawowa nr 4, ul. Lipowa 2. Glosowanie w godz. 7-21."}
+{"sender": "CEPiK", "text": "Stacja Kontroli Pojazdow AUTO-TEST: Przypominamy, ze termin badania technicznego Twojego pojazdu uplywa 12.11. Umow wizyte: 32 410 22 18."}
+{"sender": "mObywatel", "text": "Zastrzezenie numeru PESEL zostalo zapisane w rejestrze. W kazdej chwili mozesz je cofnac w aplikacji mObywatel."}
+{"sender": "+48 22 520 18 00", "text": "Naruszenie danych w Przychodni Zdrowie Plus moze obejmowac PESEL, dane o zdrowiu. Ryzyka: kredyt - zastrzez PESEL; bezprawne uzycie danych. Sprawdz na bezpiecznedane.gov.pl. Nie klikaj w linki z innych wiadomosci.", "hard": true}
+{"sender": "8080", "text": "Dziekujemy za zgloszenie do CERT Polska. Wiadomosc trafi do analizy. Jesli zawierala link do falszywej strony, zostanie ona zablokowana.", "hard": true}
+{"sender": "Urzad Skarbowy", "text": "US Warszawa-Mokotow: Pismo w Twojej sprawie zostalo wyslane na adres do e-Doreczen. Odbierzesz je po zalogowaniu na mObywatel.gov.pl.", "hard": true}
+{"sender": "e-TOLL", "text": "e-TOLL: Saldo Twojego konta rozliczeniowego jest nizsze niz 20 zl. Doladuj konto w aplikacji e-TOLL PL lub na etoll.gov.pl.", "hard": true}
+{"sender": "NFZ", "text": "NFZ: Przypominamy o bezplatnym szczepieniu przeciw grypie dla seniorow. Zapisz sie u lekarza rodzinnego lub w aptece. Informacje: 800 190 590."}
+{"sender": "Urzad Wojewodzki", "text": "MUW: Twoja wizyta w Wydziale Spraw Cudzoziemcow 04.11 godz. 10:30, stanowisko 7. Zabierz paszport i potwierdzenie oplaty skarbowej.", "hard": true}
+{"sender": "Policja", "text": "KPP Wieliczka: Uwaga na oszustow podajacych sie za policjantow! Policja nigdy nie prosi o przekazanie pieniedzy ani o wplate na jakiekolwiek konto.", "hard": true}

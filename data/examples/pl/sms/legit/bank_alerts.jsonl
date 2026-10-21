@@ -1,0 +1,22 @@
+{"sender": "mBank", "text": "mBank: Wplyw 6 480,00 PLN od FIRMA XYZ SP. Z O.O. tytulem: Wynagrodzenie 10/2026. Saldo: 7 912,33 PLN"}
+{"sender": "PKO BP", "text": "PKO BP: Karta ...3301 obciazona kwota 124,90 PLN w LIDL SP. Z O.O. Dostepne srodki: 2 040,17 PLN"}
+{"sender": "ING", "text": "ING: Zablokowalismy Twoja karte ...8812 zgodnie z Twoim zgloszeniem. Nowa karta przyjdzie poczta w ciagu 7 dni."}
+{"sender": "Santander", "text": "Erste Bank: Saldo Twojego konta spadlo ponizej 100 PLN. Aktualne saldo: 64,20 PLN."}
+{"sender": "Pekao", "text": "Pekao: Twoja karta ...5521 wygasa 30.11.2026. Nowa karta zostala wyslana na adres korespondencyjny. Aktywujesz ja w PeoPay."}
+{"sender": "Millennium", "text": "Millennium: Rata kredytu 1 342,18 PLN zostanie pobrana 25.10. Zadbaj o srodki na rachunku."}
+{"sender": "mBank", "text": "mBank: Twoja platnosc karta 1 299,00 PLN zostala odrzucona - przekroczony limit dzienny. Mozesz zmienic limit w aplikacji.", "hard": true}
+{"sender": "ING", "text": "ING: Uwaga na oszustow! Nasi pracownicy nigdy nie prosza o kody BLIK, hasla ani instalowanie aplikacji. W razie watpliwosci rozlacz sie i zadzwon do nas sam.", "hard": true}
+{"sender": "PKO BP", "text": "PKO BP: Zalogowano do serwisu iPKO 21.10 14:02 z nowego urzadzenia (Chrome, Windows). Jesli to nie Ty, zablokuj dostep w aplikacji IKO lub zadzwon 800 302 302.", "hard": true}
+{"sender": "Alior", "text": "Alior Bank: Przelew 2 500,00 PLN na rachunek ...4410 zostal wstrzymany do weryfikacji. Zadzwonimy do Ciebie z numeru 19 502. Mozesz tez potwierdzic go w aplikacji.", "hard": true}
+{"sender": "BNP Paribas", "text": "BNP Paribas: Zmieniamy Tabele Oplat i Prowizji od 01.12.2026. Szczegoly w bankowosci GOonline i na bnpparibas.pl/zmiany."}
+{"sender": "Santander", "text": "Erste Bank: Witaj w Erste! Twoja aplikacja zmienila nazwe i wyglad. Login, haslo i karty dzialaja bez zmian - nie musisz niczego aktywowac.", "hard": true}
+{"sender": "ING", "text": "ING: Wplynela zwrot podatku z Urzedu Skarbowego 612,00 PLN.", "hard": true}
+{"sender": "mBank", "text": "mBank: Twoje konto oszczednosciowe zarobilo 18,42 PLN odsetek w pazdzierniku."}
+{"sender": "PKO BP", "text": "PKO BP: Czy to Ty placisz karta ...3301 kwota 3 450,00 EUR w BOOKING.COM? Potwierdz lub odrzuc w aplikacji IKO.", "hard": true}
+{"sender": "Pekao", "text": "Pekao: Polecenie zaplaty dla PGE OBROT S.A. 214,60 PLN zostanie zrealizowane 28.10."}
+{"sender": "Credit Agricole", "text": "Credit Agricole: Twoja lokata 10 000 PLN zakonczy sie 02.11. Mozesz ja odnowic w aplikacji CA24 Mobile."}
+{"sender": "Millennium", "text": "Millennium: Odrzucilismy podejrzana platnosc 899,00 PLN. Twoja karta ...7742 zostala zastrzezona dla bezpieczenstwa. Szczegoly w aplikacji lub pod 22 598 40 31.", "hard": true}
+{"sender": "VeloBank", "text": "VeloBank: Przypominamy, ze bank nie wysyla linkow do logowania w SMS. Loguj sie tylko przez aplikacje lub wpisujac adres velobank.pl.", "hard": true}
+{"sender": "ING", "text": "ING: Otrzymales przelew na telefon BLIK 120,00 PLN od MAGDALENA K. tytulem: za bilety."}
+{"sender": "Revolut", "text": "Revolut: Zaplacono 32,40 PLN w Bolt. Saldo: 845,12 PLN"}
+{"sender": "PKO BP", "text": "PKO BP: Zastrzezenie PESEL - zmienilismy Twoje dane w systemie. Jesli chcesz zaciagnac kredyt, najpierw cofnij zastrzezenie w mObywatelu."}

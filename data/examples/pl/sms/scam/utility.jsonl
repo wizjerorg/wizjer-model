@@ -1,0 +1,23 @@
+{"sender": "PGE", "text": "PGE: Twoja faktura za energie nr ES1680/88/978 jest przeterminowana. Ureguluj zadluzenie 12,40 zl lub nastapi odlaczenie: pge-platnosc.pl", "campaign": "pl-energy-arrears"}
+{"sender": "+48 602 418 730", "text": "Informujemy o planowanym odłączeniu energii elektrycznej dziś o 21:00 z powodu niedopłaty 0,90 zł. Ureguluj należność: https://energia-doplata.top", "campaign": "pl-energy-arrears"}
+{"sender": "Tauron", "text": "TAURON: Brak platnosci za ostatnia fakture. Dostawy pradu zostana wstrzymane jutro o 8:00. Oplac 37,18 zl: https://tauron-oplata.info", "campaign": "pl-energy-arrears"}
+{"sender": "Enea", "text": "ENEA: W wyniku zmiany przepisow przysluguje Ci zwrot nadplaty za energie 279,29 zl. Potwierdz dane do zwrotu: https://enea-zwrot.site", "campaign": "pl-energy-refund"}
+{"sender": "+48 571 228 093", "text": "PGE: zwrot nadpłaty za prąd 312,60 zł czeka na wypłatę. Zaloguj się do eBOK i wskaż kartę do zwrotu: https://renew-pge.site/PGE.pl.php", "campaign": "pl-energy-refund"}
+{"sender": "Energa", "text": "Energa Obrót: Na podstawie dekretu o obniżce cen energii przysługuje Ci zwrot 186,40 zł. Wypłata wymaga weryfikacji karty: energa-zwrot.top/k", "campaign": "pl-energy-refund"}
+{"sender": "Play24", "text": "Podwojna platnosc za fakture. Sprawdz: https://playb24.com/pl", "campaign": "pl-telecom-double"}
+{"sender": "Plus", "text": "Plus: Wykryto podwójne obciążenie za abonament (54,99 zł). Odbierz zwrot: https://plus-zwrot.cfd", "campaign": "pl-telecom-double"}
+{"sender": "+48 664 230 819", "text": "Szanowny uzytkowniku, zweryfikuj swoj numer telefonu, aby uniknac blokady karty https://t.co/fac1uR0Bh7", "campaign": "pl-sim-update"}
+{"sender": "+48 791 308 640", "text": "Drogi kliencie, Twoja karta SIM wymaga aktualizacji. Prosimy o natychmiastowe zaktualizowanie: https://t.co/YReNe4Bz7q", "campaign": "pl-sim-update"}
+{"sender": "Wsparcie", "text": "Orange: Twoje uslugi zostana zawieszone dzis o 23:59 z powodu zaleglej platnosci 8,00 zl. Oplac teraz: https://orange-login.com/pl", "campaign": "pl-orange-8zl"}
+{"sender": "ORFLEX", "text": "Orange Flex: Twoja umowa konczy sie jutro. Przedluz ja, aby nie stracic numeru: https://flex-przedluz.top", "campaign": "pl-orange-flex"}
+{"sender": "+33 6 44 21 90 18", "text": "FLEX: Twoja karta zostanie dezaktywowana w ciagu 24h. Zaloguj sie i potwierdz numer: https://orange-flex.verify-pl.com", "campaign": "pl-orange-flex"}
+{"sender": "T-Mobile", "text": "T-Mobile: zaleglosc za fakture 128,47 zl. W przypadku braku wplaty do jutra sprawa trafi do windykacji. Szybka platnosc: https://tmobile-faktury.top"}
+{"sender": "+48 535 009 281", "text": "Twoja faktura za gaz jest nieopłacona. Aby uniknąć wstrzymania dostaw, zapłać 23,50 zł w ciągu 12 godzin: https://gaz-doplata.click"}
+{"sender": "MPWiK", "text": "MPWiK: Z powodu zaleglosci za wode dostawa zostanie wstrzymana jutro. Oplac 9,80 zl: http://mpwik-oplaty.top"}
+{"sender": "Orange", "text": "0range: Zmiana ceny Twojego pakietu wymaga aktualizacji danych platniczych. Potwierdz: orangerenew.com"}
+{"sender": "+48 604 391 027", "text": "Tauron Dystrybucja: zgodnie z ustawą o mrożeniu cen musisz zaktualizować oświadczenie do 31.10, inaczej zapłacisz stawkę rynkową. Formularz: https://oswiadczenie-energia.top", "types": ["utility", "government"]}
+{"sender": "Netia", "text": "Netia: Twoj internet zostanie odlaczony z powodu nieoplaconej faktury 49,99 zl. Zaplac: https://netia-platnosc.sbs"}
+{"sender": "PGE", "text": "PGE Obrót: Korekta rozliczenia – opłata za moc bierną naliczona błędnie. Zwrot 64,12 zł. Zweryfikuj dane ewidencyjne: https://pge-korekta.top", "campaign": "pl-energy-refund"}
+{"sender": "+48 727 341 005", "text": "UWAGA odłączenie prądu!!! Twój licznik zostanie zdjęty jutro przez technika. Zapłać zaległość 1,99 zł teraz: https://licznik-energia.pl.eu.cc"}
+{"sender": "Polsat Box", "text": "Polsat Box: Brak platnosci za fakture. Uslugi TV zostana zawieszone. Oplac: https://polsatbox-platnosc.top"}
+{"sender": "Heyah", "text": "Heyah: Twoj numer zostanie dezaktywowany. Wymagana rejestracja danych abonenta zgodnie z ustawa. Zarejestruj: https://heyah-rejestracja.click", "types": ["utility", "government"]}

@@ -1,0 +1,18 @@
+# Built dataset (regenerate with: python scripts/build.py)
+dist/
+
+# Third-party datasets are downloaded locally, never committed (see external/README.md)
+external/raw/
+external/converted/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,12 @@
+{"sender": "PKO BP", "text": "PKO BP: Uwaga na oszustow podszywajacych sie pod pracownikow banku. Nigdy nie prosimy o kod BLIK, haslo ani instalacje aplikacji. Rozmowe zawsze mozesz sprawdzic w IKO.", "hard": true}
+{"sender": "Orange", "text": "Orange: Oszusci wysylaja SMS-y o rzekomej doplacie do paczki. Nie klikaj w takie linki. Podejrzane SMS-y przekazuj na nr 8080.", "hard": true}
+{"sender": "CERT Polska", "text": "Masz watpliwosci, czy SMS jest prawdziwy? Przekaz go bezplatnie na numer 8080 - CERT Polska sprawdzi i zablokuje falszywe strony.", "hard": true}
+{"sender": "InPost", "text": "InPost: Nigdy nie wysylamy SMS-ow z prosba o doplate do przesylki. Jesli dostaniesz taka wiadomosc - to oszustwo. Zglos ja na 8080.", "hard": true}
+{"sender": "mBank", "text": "mBank: Oszusci podszywaja sie pod policje i bank. Nikt nie moze kazac Ci przelac pieniedzy na „bezpieczne konto”. Rozlacz sie i zadzwon do nas.", "hard": true}
+{"sender": "Play", "text": "Play: Uwaga na falszywe SMS-y o blokadzie karty SIM. Nie wymagamy aktualizacji karty przez link. Sprawdzaj komunikaty w aplikacji Play24.", "hard": true}
+{"sender": "ZUS", "text": "ZUS: Nie wysylamy SMS-ow z linkami do platnosci. Skladki oplacisz tylko na swoj indywidualny rachunek skladkowy.", "hard": true}
+{"sender": "Santander", "text": "Erste Bank: Zmiana nazwy banku nie wymaga zadnych dzialan z Twojej strony. Nie klikaj w linki obiecujace premie za aktywacje aplikacji.", "hard": true}
+{"sender": "OLX", "text": "OLX: Pamietaj - nie musisz podawac danych karty ani logowac sie do banku, aby otrzymac platnosc za sprzedany przedmiot.", "hard": true}
+{"sender": "Policja", "text": "Policja ostrzega: oszusci dzwonia jako „wnuczek” lub „policjant”. Prawdziwy policjant nigdy nie prosi o pieniadze. Zadzwon na 112, jesli masz watpliwosci.", "hard": true}
+{"sender": "Allegro", "text": "Allegro: Nie wysylamy SMS-ow z linkami do nagrod ani konkursow. Wszystkie promocje znajdziesz w aplikacji Allegro.", "hard": true}
+{"sender": "T-Mobile", "text": "T-Mobile: Uruchomilismy ochrone przed falszywymi SMS-ami. Jesli link prowadzi do niebezpiecznej strony, zobaczysz ostrzezenie CERT.", "hard": true}

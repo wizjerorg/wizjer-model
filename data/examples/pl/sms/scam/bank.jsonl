@@ -1,0 +1,40 @@
+{"sender": "PKO BP", "text": "PKO BP: wykrylismy podejrzane logowanie na Twoim koncie z urzadzenia iPhone (Kijow). Jesli to nie Ty, potwierdz tozsamosc: pkobp-weryfikacja.com"}
+{"sender": "+48 508 334 912", "text": "Alert bezpieczeństwa: Wykryliśmy podejrzane logowanie do Twojego konta. Jeśli to nie Ty, sprawdź ostatnią aktywność i zabezpiecz konto tutaj: https://e.vg/Erste", "campaign": "pl-erste"}
+{"sender": "Erste", "text": "Erste Bank: w zwiazku ze zmiana marki z Santander konieczna jest ponowna aktywacja aplikacji mobilnej do 31.10. Aktywuj: https://erste-aktywacja.sbs/mobile", "types": ["bank", "remote_access"], "campaign": "pl-erste"}
+{"sender": "iPKO", "text": "Twoja aplikacja mobilna IKO straci waznosc 25.10. Zainstaluj nowa wersje, aby zachowac dostep do konta: https://iko-update.pl.eu.cc", "types": ["bank", "remote_access"], "campaign": "pl-bank-new-app"}
+{"sender": "mBank", "text": "mBank: Zmienilismy strone logowania. Kliknij link i potwierdz swoje dane, aby uniknac blokady: https://mbank-logowanie.info/nowa", "campaign": "pl-bank-new-app"}
+{"sender": "+48 664 091 287", "text": "Szanowny Kliencie, rejestracja Twojej aplikacji bankowej wygasa dzisiaj. Dokoncz weryfikacje: https://bank-rejestracja.top"}
+{"sender": "+48 731 448 205", "text": "Nowa, ulepszona aplikacja Twojego banku jest juz dostepna. Stara przestanie dzialac 30.10. Pobierz: https://nowa-aplikacja-banku.com/apk", "types": ["bank", "remote_access"]}
+{"sender": "alior24", "text": "Weryfikacja pracownika banku. Twoj kod weryfikacji - 119384. Nie podawaj nikomu tego kodu. Popros o ten kod doradce z ktorym obecnie rozmawiasz. Godnosc prowadzacego twoja sprawe - Zaneta Kaminska. Z pozdrowieniami, Alior Bank Polska", "campaign": "pl-bank-verify-sms", "hard": true}
+{"sender": "ipko24", "text": "Weryfikacja konsultanta PKO BP. Kod potwierdzajacy: 508271. Podaj go doradcy, z ktorym rozmawiasz, aby potwierdzic jego tozsamosc. Opiekun sprawy: Tomasz Wrobel, Departament Bezpieczenstwa.", "campaign": "pl-bank-verify-sms", "hard": true}
+{"sender": "PEKA024", "text": "Bank Pekao: potwierdzenie rozmowy z pracownikiem Dzialu Bezpieczenstwa. Numer zgloszenia 4471/2026. Pracownik: Anna Sikorska. Prosimy o wykonywanie jego polecen w celu zabezpieczenia srodkow.", "campaign": "pl-bank-verify-sms", "hard": true}
+{"sender": "NBP", "text": "Narodowy Bank Polski: Twoje srodki zostaly objete ochrona w zwiazku z proba wyludzenia. Konsultant skontaktuje sie z Toba w ciagu 10 minut. Nie rozlaczaj sie i nie informuj nikogo."}
+{"sender": "ing24", "text": "ING: zgloszenie podejrzanej transakcji 7 489,00 PLN zostalo przyjete. Aby ja anulowac, oddzwon do Dzialu Bezpieczenstwa: 22 307 48 19."}
+{"sender": "+48 22 104 77 30", "text": "Na Twoje dane probowano zaciagnac kredyt 25 000 zl. Jesli to nie Ty, pilnie skontaktuj sie z naszym konsultantem pod numerem 22 104 77 31."}
+{"sender": "Santander", "text": "Twoja karta zostala tymczasowo zablokowana z powodu podejrzanej transakcji. Odblokuj ja: https://santander-karta.icu"}
+{"sender": "+385 91 274 4810", "text": "BNP Paribas: Twoje konto wymaga weryfikacji. W przeciwnym razie zostanie zablokowane w ciagu 24h. https://bnpparibas-weryfikacja.com/pl"}
+{"sender": "Millennium", "text": "Bank Millennium: Przelew 1 850,00 PLN na rachunek 41 1090 2590 0000 0001 4387 1196 oczekuje na autoryzacje. Jesli go nie zlecales, anuluj tutaj: https://millennium-anuluj.top"}
+{"sender": "mBank", "text": "mBank: Twoje dane w systemie sa nieaktualne. Zaktualizuj numer telefonu, aby uniknac zawieszenia konta: https://mbank-dane.s3-weryfikacja.com"}
+{"sender": "+48 571 006 392", "text": "Twoje konto zostało zablokowane z powodu nieudanych prób logowania. Odblokuj je w ciągu 2 godzin, inaczej środki zostaną zamrożone: https://odblokuj-konto24.com"}
+{"sender": "Credit Agricole", "text": "agricole24: Wymagane jest odnowienie certyfikatu bezpieczenstwa bankowosci. Brak odnowienia skutkuje blokada uslug: https://ca24-certyfikat.info"}
+{"sender": "VeloBank", "text": "VeloBank: Twoja karta wygasa. Zamow nowa i potwierdz dane karty: https://velo-karta.sbs/zamow"}
+{"sender": "PKO BP", "text": "PKO BP: W zwiazku z atakiem hakerskim Twoje srodki sa zagrozone. Przelej je niezwlocznie na bezpieczny rachunek techniczny 03 1020 1026 0000 0402 0157 3381. Konsultant oczekuje na potwierdzenie.", "hard": true}
+{"sender": "+48 600 917 248", "text": "Twój bank wprowadza nocną lokatę ochronną. Aby zabezpieczyć oszczędności przed cyberatakiem, przenieś je na lokatę do 23:59: https://lokata-ochronna.pl.eu.cc"}
+{"sender": "Pekao", "text": "Pekao24: Dostep do bankowosci zostal ograniczony. Aby przywrocic, zaloguj sie i potwierdz tozsamosc: https://pekao24-logowanie.click"}
+{"sender": "Monitoring.", "text": "Monitoring transakcji: zablokowalismy probe platnosci 3 299 zl w sklepie internetowym. Aby potwierdzic, ze to nie Ty, zadzwon: 799 413 207."}
+{"sender": "ING Bank", "text": "ING: Nowy regulamin bankowosci mobilnej wymaga ponownej weryfikacji klienta do konca miesiaca. Przejdz do weryfikacji: ing-weryfikacja-klienta.com"}
+{"sender": "+48 722 615 093", "text": "Bank: dodano nowe urzadzenie zaufane (Samsung SM-A546). Jesli to nie Ty, natychmiast zablokuj dostep: https://zablokuj-urzadzenie.top"}
+{"sender": "PKO", "text": "P K O: aktualizacja aplikacji IKO jest obowiazkowa. Pobierz aktualizacje bezposrednio z naszej strony: iko-pobierz.app.eu.cc/IKO.apk", "types": ["bank", "remote_access"]}
+{"sender": "+48 503 288 640", "text": "Dzień dobry, tu Dział Bezpieczeństwa Twojego banku. Pana konto jest atakowane. Proszę zainstalować aplikację AnyDesk, nasz technik pomoże zabezpieczyć środki.", "types": ["bank", "remote_access"]}
+{"sender": "BLIK", "text": "BLIK: wymagana aktualizacja bezpieczenstwa Twojego konta BLIK. Potwierdz dane do 20.10, aby zachowac dostep: https://blik-pl.info/?=7612", "types": ["bank", "phishing"]}
+{"sender": "+45 22 76 13 22", "text": "Obowiazkowa aktualizacja bezpieczenstwa Twojego konta Blik. Drogi Uzytkowniku, zgodnie z ustawa §37 ust. 2 musimy potwierdzic dane Twojego konta. Potwierdz najpozniej do 20 listopada: https://blik-polska.info/a=4471. Zespol Blik"}
+{"sender": "mBank", "text": "Przypominamy: zaległe potwierdzenie danych klienta (KYC). Brak potwierdzenia do jutra oznacza wypowiedzenie umowy. Potwierdź: https://mbank-kyc.cfd"}
+{"sender": "+48 666 401 573", "text": "Uwaga! Twoj rachunek zostal wykorzystany do prania pieniedzy. Sprawe prowadzi Komisja Nadzoru Finansowego. Zadzwon do inspektora: 22 262 55 18 przed 16:00.", "types": ["bank", "government"]}
+{"sender": "Santander", "text": "Erste Bank: Twoje punkty Santander wygasaja jutro! Wymien je na nagrody: santander-pl-punkty.com", "types": ["bank", "prize"]}
+{"sender": "+48 535 092 116", "text": "Twoja karta debetowa zostala obciazona kwota 2 499,99 zl (MEDIA EXPERT ONLINE). Jesli nie rozpoznajesz transakcji, odwolaj ja: https://reklamacja-transakcji.com"}
+{"sender": "PKOBP", "text": "Bank PKO: Za aktywacje nowej aplikacji otrzymasz premie 1200 zl. Promocja tylko dzis: https://pko-premia.sbs/aktywuj", "types": ["bank", "prize"]}
+{"text": "Szanowny Kliencie, otrzymales przelew 3 500,00 PLN, ktory wymaga zatwierdzenia. Zatwierdz wplyw na: https://zatwierdz-przelew.top/pl"}
+{"sender": "Nest Bank", "text": "Nest Bank: Na Twoim koncie wykryto nieautoryzowane polecenie zaplaty. Zaloguj sie, aby je wstrzymac: https://nestbank-wstrzymaj.info"}
+{"sender": "+48 791 280 637", "text": "Konsultant mBanku prosi o pilny kontakt w sprawie zablokowanego przelewu. Odpisz OK, a oddzwonimy w ciagu 5 minut.", "hard": true}
+{"sender": "ING", "text": "ING Bank Slaski: Wygasla zgoda na uslugi biometryczne. Zaloguj sie ponownie, aby ja odnowic: https://ingbank-biometria.top"}
+{"sender": "+48 727 006 482", "text": "Twój bank: kurier odbierze dziś Twoją kartę i telefon do zabezpieczenia w związku z wyłudzeniem. Przygotuj je i nie informuj nikogo – trwa postępowanie."}

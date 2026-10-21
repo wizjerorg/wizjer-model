@@ -1,0 +1,23 @@
+{"sender": "Verify", "text": "OLX: Wykryto problem z publikacja Twojego ogloszenia. Zweryfikuj konto, aby ogloszenie pozostalo aktywne: https://olx-pl.entryclear.site/olx/418275306", "campaign": "pl-olx-verify"}
+{"sender": "Weryfikator", "text": "OLX: Twoje konto wymaga weryfikacji w ciagu 24h. Brak weryfikacji spowoduje ukrycie ogloszen. https://profil-sprzedawcy.site/olx/702934118", "campaign": "pl-olx-verify"}
+{"sender": "Alert", "text": "Twoje ogłoszenie na OLX zostało wstrzymane do czasu weryfikacji sprzedającego. Dokończ weryfikację: trustkey.site/olx/553810247", "campaign": "pl-olx-verify"}
+{"sender": "Autoryzacja", "text": "OLX Polska: Problem z publikacja. Potwierdz dane sprzedawcy: https://olx.weryfikacja-konta.eu.cc/olx/918204736", "campaign": "pl-olx-verify"}
+{"sender": "Zweryfikuj", "text": "Szanowny Uzytkowniku OLX, Twoje konto wygasa. Odnow je, aby dalej sprzedawac: https://olx-odnowienie.pl.eu.cc", "campaign": "pl-olx-verify"}
+{"sender": "+48 532 790 418", "text": "OLX: Kupujący opłacił Twój przedmiot przez OLX Dostawę. Aby odebrać środki (189,00 zł), potwierdź dane karty: https://olx-wyplata.top/odbierz/88213"}
+{"sender": "+48 664 302 715", "text": "Dzień dobry! Kupiłem Pani rower, zapłata poszła przez OLX. Proszę kliknąć w link i odebrać płatność, kurier InPost przyjedzie jutro i sam zapakuje: https://olx-bezpieczna-platnosc.com/p/6612"}
+{"sender": "+48 791 448 230", "text": "Witam, chcę kupić konsolę. Opłaciłem już przez Vinted, proszę potwierdzić sprzedaż tutaj, żeby środki trafiły na konto: https://vinted-pl.transakcja-safe.top", "campaign": "pl-vinted-paid"}
+{"sender": "Vinted", "text": "Vinted: Twoj przedmiot zostal sprzedany! Aby otrzymac 145,00 zl, zweryfikuj konto bankowe: https://vinted-wyplaty.click/pl", "campaign": "pl-vinted-paid"}
+{"sender": "Allegro", "text": "Allegro Lokalnie: kupujacy oplacil zamowienie. Odbierz platnosc w ciagu 2h, inaczej transakcja zostanie anulowana: https://allegrolokalnie.923841672.sbs"}
+{"sender": "+48 727 090 312", "text": "Hej, interesuje mnie Twój samochód z Otomoto. Zrobiłem rezerwację z zaliczką 500 zł, zatwierdź ją w panelu: https://otomoto-rezerwacja.sbs/ogl/66120"}
+{"sender": "+48 515 662 807", "text": "OLX: Kupujący zgłosił, że nie otrzymał zwrotu. Aby uniknąć blokady konta, zwróć środki przez link: https://olx-zwroty.top", "hard": true}
+{"sender": "OLX", "text": "0LX: Na Twoje konto wpłynęło 260 zł od kupującego. Środki są zablokowane do potwierdzenia tożsamości: https://olx.pl-safe-pay.com/verify"}
+{"sender": "Bezpieczen", "text": "Sprzedaz potwierdzona. Wypłata środków wymaga weryfikacji karty (kwota zwrotna 1 zł): https://bezpieczne-transakcje.olx-pl.cc"}
+{"sender": "+48 600 238 194", "text": "dzien dobry czy oferta jeszcze aktualna? biorę, mam kuriera opłaconego przez olx, prosze o adres email to wyślę link do odbioru pieniedzy"}
+{"sender": "+48 691 077 520", "text": "Witam, sprzedaje Pan kanapę? Moja żona jest za granicą i chce, żeby pakę odebrał kurier DPD. Płacę od razu, link do odbioru pieniędzy wyślę SMS-em ok?"}
+{"sender": "Centr", "text": "Centrum Pomocy OLX: Twoje konto zostalo oznaczone jako podejrzane. Zweryfikuj tozsamosc przez bank, aby je odblokowac: https://olx-centrum-pomocy.top"}
+{"sender": "Vinted", "text": "Vinted: Kupujacy zgłosił problem z płatnością. Potwierdź swoje dane w ciągu 1h, aby otrzymać środki: vinted-pomoc.pl.eu.cc"}
+{"sender": "+48 572 801 649", "text": "Kupiłam Pani sukienkę na Vinted ❤️ niestety płatność się zablokowała i Vinted prosi Panią o potwierdzenie na tej stronie: https://vinted-potwierdzenie.top/a8f"}
+{"sender": "Allegro", "text": "Allegro: Gratulujemy sprzedazy! Aby wyplacic srodki z Allegro Finance, podaj dane karty: https://allegro-wyplaty.cfd"}
+{"sender": "+48 733 662 108", "text": "Dzień dobry, odpisuję w sprawie ogłoszenia na Facebook Marketplace. Zapłaciłem przez Facebook Pay, odbierz pieniądze tu: https://fb-marketplace-pay.top/pl"}
+{"sender": "+48 532 407 913", "text": "Witam, OLX przelał środki za Pani ogłoszenie, ale potrzebny jest kod potwierdzający. Proszę wejść w link i zalogować się do banku: https://olx-przelew.site", "types": ["marketplace", "bank"]}
+{"sender": "Verify", "text": "Twoja sprzedaz na OLX zostala wstrzymana. Powod: niezweryfikowane konto bankowe. Weryfikacja: https://olx.konto-verify.click/olx/306118920", "campaign": "pl-olx-verify"}
