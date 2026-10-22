@@ -16,3 +16,11 @@
 {"app": "PKP Intercity", "sender": "PKP Intercity", "text": "Pociąg TLK 18102 jest opóźniony o 15 minut."}
 {"app": "Moje ING", "sender": "ING", "text": "Zablokowaliśmy płatność kartą na podejrzanej stronie. Jeśli to Ty, odblokuj ją w aplikacji.", "hard": true}
 {"app": "Messenger", "sender": "Facebook", "text": "Ktoś próbował zalogować się na Twoje konto. Zablokowaliśmy tę próbę. Sprawdź ustawienia bezpieczeństwa w aplikacji.", "hard": true}
+{"app": "Revolut", "sender": "Revolut", "text": "Paulina K. prosi o 32,00 zł: pizza 🍕 Dotknij, aby zapłacić"}
+{"app": "PKO BP", "sender": "IKO", "text": "Otrzymałeś przelew na telefon BLIK: 120,00 zł od MAGDALENA. Tytuł: za koncert"}
+{"app": "Allegro", "sender": "Allegro", "text": "Twoja paczka jest w automacie Allegro One Box WAW04A. Kod odbioru znajdziesz w aplikacji."}
+{"app": "InPost", "sender": "InPost Mobile", "text": "Paczka od Zalando czeka w Paczkomacie GDA33M. Otwórz zdalnie w aplikacji, masz czas do 25.10 23:59."}
+{"app": "mObywatel", "sender": "mObywatel", "text": "Masz nowe powiadomienie: Twój dowód osobisty traci ważność za 30 dni. Złóż wniosek o nowy dowód w aplikacji lub w urzędzie."}
+{"app": "Uber", "sender": "Uber", "text": "Twój kierowca Piotr przyjedzie za 3 min. Toyota Corolla, srebrna, WX 4821K"}
+{"app": "Bolt", "sender": "Bolt", "text": "Twoje zamówienie z Bolt Food jest w drodze 🛵 Przewidywana dostawa 19:40"}
+{"app": "Google", "sender": "Google", "text": "Czy to Ty próbujesz się zalogować? Kliknij Tak na swoim telefonie, aby kontynuować. Urządzenie: Windows, Gdańsk"}

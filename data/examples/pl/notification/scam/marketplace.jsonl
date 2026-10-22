@@ -11,3 +11,24 @@
 {"app": "WhatsApp", "sender": "+48 727 090 312", "text": "Pan sprzedaje auto? Zrobię zaliczkę 1 000 zł, tylko proszę zalogować się do banku przez ten link, żeby przyjąć przelew ekspresowy", "types": ["marketplace", "bank"]}
 {"app": "Vinted", "sender": "Vinted Team", "text": "Twoje środki 145,00 zł zostały wstrzymane. Aby je wypłacić, zweryfikuj kartę: https://vinted-wyplata.click/pl"}
 {"app": "WhatsApp", "sender": "+48 600 238 194", "text": "To ja z OLX, kurier już jedzie, potrzebuje tylko kodu który Pani dostała SMS-em od InPostu, proszę podać", "types": ["marketplace", "code_theft"]}
+{"app": "WhatsApp", "sender": "+48 791 204 388", "text": "Opłaciłam już towar i przesyłkę, OLX wysłał Pani link do odbioru pieniędzy na maila, proszę sprawdzić"}
+{"app": "WhatsApp", "sender": "+48 733 918 462", "text": "Podaj prosze swojego maila, wysle ci potwierdzenie platnosci z OLX"}
+{"app": "Vinted", "sender": "ola.kupuje22", "text": "Zapłaciłam, ale Vinted pisze że musisz potwierdzić sprzedaż przez link, wysłałam Ci go na WhatsAppie"}
+{"app": "WhatsApp", "sender": "+48 512 660 917", "text": "kurier DPD sam odbierze od Pana, ja wszystko opłaciłem. tylko prosze wejść w link i wpisać dane karty żeby przyszły pieniądze"}
+{"app": "WhatsApp", "sender": "+48 571 330 286", "text": "Pieniądze są zablokowane bo nie potwierdził Pan konta sprzedawcy. Musi Pan wpisać saldo karty, wtedy system Pana zweryfikuje"}
+{"app": "OLX", "sender": "Marzena", "text": "Nie mogę zapłacić w aplikacji bo mi wyskakuje błąd, możemy przez ten link? olx-pl.bezpieczna-oferta.com/88213"}
+{"app": "WhatsApp", "sender": "+48 690 512 774", "text": "Wysłałam już 450 zł, ale bank napisał że musi Pani odebrać w ciągu 30 minut bo wrócą do mnie"}
+{"app": "WhatsApp", "sender": "+48 733 918 462", "text": "To jest od OLX, musisz kliknąć ODBIERZ ŚRODKI i podać numer karty, inaczej transakcja się anuluje"}
+{"app": "WhatsApp", "sender": "+48 512 660 917", "text": "Czemu Pan nie odbiera pieniędzy? Konsultant OLX czeka na czacie, wejdź w link który Ci wysłałem"}
+{"app": "WhatsApp", "sender": "+48 783 095 214", "text": "zaplacilem juz, tu masz potwierdzenie: odbior-srodkow-inpost.pl/z/4421 wpisz dane i kasa wpadnie"}
+{"app": "OLX", "sender": "Daniel", "text": "Witam, jestem zainteresowany ale jestem za granicą. Mój kurier odbierze, zapłacę z góry, proszę podać maila to wyślę formularz"}
+{"app": "Vinted", "sender": "nataliaa_k", "text": "Dostałaś maila od Vinted? Trzeba tam potwierdzić kartę, to tylko weryfikacja, nic Ci nie zejdzie z konta"}
+{"app": "WhatsApp", "sender": "+48 664 127 590", "text": "Przelałam za dużo, 800 zamiast 300 😔 może Pani oddać różnicę BLIKiem na mój numer?"}
+{"app": "WhatsApp", "sender": "+48 783 095 214", "text": "pieniadze juz sa w drodze, bank wymaga zebys podal kod BLIK zeby je przyjac"}
+{"app": "WhatsApp", "sender": "+48 690 512 774", "text": "Wygenerowałam przesyłkę, proszę mi podać kod z SMSa który zaraz Pani dostanie, kurier musi go mieć przy odbiorze"}
+{"app": "OLX", "sender": "Kamil", "text": "Pani konto sprzedawcy nie jest zweryfikowane. Proszę napisać do pomocy OLX na WhatsApp +44 7418 220 731, oni to odblokują"}
+{"app": "Messenger", "sender": "Iwona Kaczmarek", "text": "To bezpieczna transakcja przez Allegro Lokalnie, wystarczy że zalogujesz się do banku przez link i potwierdzisz odbiór"}
+{"app": "WhatsApp", "sender": "+48 571 330 286", "text": "Kupiłam, zapłaciłam, przesyłka zamówiona. Teraz kliknij w link który przyszedł SMSem i wybierz swój bank"}
+{"app": "OLX", "sender": "Grzegorz", "text": "Mogę wysłać OLX dostawą, ale musi Pan najpierw wpłacić 50 zł zaliczki BLIKiem na mój numer, bo ostatnio ktoś mnie wystawił"}
+{"app": "Messenger", "sender": "Mateusz Wróbel", "text": "Mieszkanie jest dostępne ale jestem teraz w Norwegii. Klucze wyślę kurierem jak wpłaci Pani kaucję 1500 zł przez Airbnb, podeślę link"}
+{"app": "WhatsApp", "sender": "+48 664 127 590", "text": "Proszę odesłać mi 500 zł różnicy, przelew się jutro zaksięguje bo jest z innego banku, potwierdzenie wysłałam"}

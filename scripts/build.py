@@ -84,6 +84,7 @@ class Record:
     source_url: str = ""
     id: str = ""
     split: str = ""
+    group: str = ""
 
     def output(self) -> dict:
         return {
@@ -102,6 +103,7 @@ class Record:
             "source_url": self.source_url,
             "license": self.license,
             "split": self.split,
+            "group": self.group,
         }
 
 
@@ -259,6 +261,7 @@ def read_external(problems: Problems) -> list[Record]:
                 lang=obj["lang"], source=obj["source"], label=obj["label"], category=obj.get("topic", "") or "external",
                 text=text[: MAX_LEN[obj["source"]]], where=where, sender=obj.get("sender", ""),
                 subject=obj.get("subject", ""), types=obj.get("types", []), origin=obj["origin"], license=obj["license"],
+                source_url=obj.get("source_url", ""),
             )
             rec.id = stable_id(rec.lang, rec.source, rec.sender, rec.subject, rec.text)
             records.append(rec)
@@ -359,6 +362,7 @@ def assign_splits(records: list[Record], seed: int) -> None:
         for position, root in enumerate(roots):
             split = "test" if position < n_test else "validation" if position < n_test + n_val else "train"
             for i in clusters[root]:
+                written[i].group = written[root].id
                 # Test stays real-only. A written near-copy of a real test message can't go to
                 # train either (it would leak), so it is left out of the build.
                 written[i].split = "" if split == "test" and written[i].origin != "real" else split
@@ -367,6 +371,7 @@ def assign_splits(records: list[Record], seed: int) -> None:
         if rec.origin not in OWN:
             bucket = int(rec.id, 16) % 10
             rec.split = "test" if bucket == 0 else "validation" if bucket == 1 else "train"
+            rec.group = rec.id
 
 
 def augmented(records: list[Record], n: int, seed: int) -> list[Record]:

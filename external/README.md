@@ -1,8 +1,8 @@
 # External datasets
 
-Optional English corpora that add volume, especially for e-mail. They are **downloaded on
-demand** by `scripts/fetch_external.py` into `external/raw/` and converted into
-`external/converted/`; neither folder is committed. Each dataset keeps its own licence and
+Optional corpora that add volume: English SMS and e-mail, and everyday Polish sentences. They
+are **downloaded on demand** by `scripts/fetch_external.py` into `external/raw/` and converted
+into `external/converted/`; neither folder is committed. Each dataset keeps its own licence and
 must be cited if you use it.
 
 | Name | Dataset | Licence | Size | Mapping |
@@ -14,15 +14,19 @@ must be cited if you use it.
 | `spamassassin` | same collection — SpamAssassin public corpus | CC BY 4.0 | 14.9 MB | spam → `spam`, ham → `legit` |
 | `ceas08` | same collection — CEAS 2008 | CC BY 4.0 | 67.9 MB | spam → `spam`, ham → `legit` |
 | `enron` | same collection — Enron | CC BY 4.0 | 44.8 MB | spam → `spam`, ham → `legit` |
+| `tatoeba_pl` | [Tatoeba](https://tatoeba.org/) Polish sentences (per-language export) | CC BY 2.0 FR | 1.7 MB, ~136 000 sentences | all → `legit` (Polish, as `sms` or `notification`, topic `conversation`); each record keeps its `tatoeba.org/sentences/show/<id>` link for attribution |
 
-By default `uci_sms`, `mendeley_smishing`, `nazario`, `nigerian_fraud` and `spamassassin` are
-fetched (about 33 MB) and each is capped at 6 000 random records.
+All datasets are fetched by default (about 150 MB) and each is capped at 6 000 random records
+(`--max-per-source`).
 
 ## Notes
 
 - The label `spam` marks unwanted messages that are not necessarily fraud. Wizjer warns about
   fraud, so how `spam` is used in training (dropped, down-weighted, or treated as `legit`) is a
   training-time decision.
-- These corpora are English, mostly older, and the e-mail ones contain real people's
+- The English corpora are mostly older, and the e-mail ones contain real people's
   correspondence (Enron, SpamAssassin). Use them locally for training only; don't republish them
   as part of this project.
+- Tatoeba sentences are single sentences, many translated from English, so they are ordinary
+  human Polish rather than real SMS. They teach the model what normal writing looks like; the
+  decision threshold is still chosen on the project's own genuine messages.

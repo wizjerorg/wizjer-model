@@ -8,9 +8,19 @@ publication `date`. Only the messages themselves are quoted, never the surroundi
 | Source | What we took | How |
 |--------|--------------|-----|
 | [CERT Orange Polska — warnings and news](https://cert.orange.pl/ostrzezenia/) | Scam SMS, chat messages and e-mails quoted in warnings, 2016–2026; a few genuine messages the team published as such (e.g. a real Profil Zaufany SMS, Orange e-invoices) | Quoted text copied; messages shown only as screenshots transcribed with OCR (Windows OCR, Polish) and checked by hand |
-| [Sekurak](https://sekurak.pl/) | Scam messages and genuine data-breach notices quoted in articles | Quoted text copied |
+| [Sekurak](https://sekurak.pl/) | Scam messages quoted in articles or shown in screenshots; genuine data-breach notices; genuine mObywatel and Google SMS shown next to fakes | Quoted text copied; screenshots transcribed with OCR and checked by hand |
+| [Niebezpiecznik](https://niebezpiecznik.pl/) | Scam SMS and e-mails from 2013–2026 screenshots; genuine breach notices companies sent to customers (Lidl, Morele, Netia, Totolotek, PZU…); a few genuine service messages (OLX code, Getin Bank, LUX MED) | As above |
+| [Erste Bank (formerly Santander) — security warnings](https://www.erste.pl/klient-indywidualny/bankowosc-internetowa/bezpieczne-bankowanie/komunikaty) | Fake bank SMS and e-mails shown in the bank's own warnings | Screenshots transcribed with OCR |
+| News sites — [Telepolis](https://www.telepolis.pl/tech/bezpieczenstwo), [Android.com.pl](https://android.com.pl/tag/oszustwo/) | Scam messages quoted in security news; genuine messages quoted as such (InPost pickup code, Biedronka, Ministry of Health) | Quoted text copied; screenshots transcribed with OCR |
+| Police and press pages (policja.gov.pl units, gov.pl/web/gitd, Bankier, Android.com.pl…) | Scam SMS quoted in public warnings | Quoted text copied |
+| [Government Centre for Security — RCB alerts](https://www.gov.pl/web/rcb/komunikaty) | Genuine Alert RCB messages (weather, floods, water, exercises), Polish letters removed as in the SMS | `scripts/collect_rcb.py` |
 | [CERT Polska — wiedza](https://wiedza.cert.pl/) | A genuine bank code SMS used as a counter-example | Quoted text copied |
 | [SISMS / BLISKO public feed](https://rejestracja.sisms.pl/wiadomosci) | Genuine notices from Polish towns and districts (water and power cuts, deadlines, events) | `scripts/collect_sisms.py` |
+
+Links that a source masked (`[link]`, `https://…`) or that OCR could not read are filled with a
+look-alike domain of the same brand from CERT Polska's list; each such record says so in `edited`.
+Names of private people, codes and account numbers are replaced; made-up account numbers fail the
+IBAN checksum.
 
 Look-alike domains used by the augmentation step (`data/pools/lookalikes.json`) come from
 [CERT Polska's public list of dangerous domains](https://hole.cert.pl/domains/v2/domains.txt)
@@ -199,3 +209,4 @@ Main sources:
 | [SMS Spam Collection](https://doi.org/10.24432/C5CC84) — Almeida & Hidalgo, UCI | CC BY 4.0 | English SMS ham/spam (spam is mostly older UK premium-rate scams). |
 | [SMS Phishing Dataset](https://doi.org/10.17632/f45bkkt8pr.1) — Mishra & Soni, Mendeley | CC BY 4.0 | English ham / spam / smishing. |
 | [Phishing Email Curated Datasets](https://doi.org/10.5281/zenodo.8339691) — Champa, Rabbi & Zibran | CC BY 4.0 | English e-mails: Nazario phishing, Nigerian fraud, SpamAssassin, CEAS-08, Enron. |
+| [Tatoeba](https://tatoeba.org/) — Polish sentences | CC BY 2.0 FR | Everyday Polish sentences as genuine chat/SMS text (6000 sampled; each keeps its tatoeba.org link). Teaches the model what ordinary human writing looks like, so plain conversation is not flagged. |

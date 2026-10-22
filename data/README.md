@@ -19,7 +19,7 @@ drafts/                                            work in progress, not used by
 | `real` | Messages people actually received, quoted or shown in public warnings and genuine notices published by their senders. | train, validation and **all of test** |
 | `written` | Messages written for this project in the style of documented campaigns, plus genuine-looking counterparts. Fills gaps the real data can't (rare scam types, hard negatives). | train and validation only |
 | `augmented` | Variants of training messages made at build time (`--augment`). | train only |
-| `external:<name>` | Third-party corpora (English), downloaded on demand. | all splits |
+| `external:<name>` | Third-party corpora, downloaded on demand: English SMS and e-mail datasets, and everyday Polish sentences from Tatoeba (genuine). | all splits |
 
 | Path part  | Values | Meaning |
 |------------|--------|---------|
@@ -50,7 +50,8 @@ Each line is one JSON object. Fields implied by the path are **not** repeated in
 `build.py` emits one object per message with: `id` (stable hash), `lang`, `source`, `label`,
 `types` (list, empty for legit), `topic` (legit category), `sender`, `subject`, `app`, `text`,
 `hard`, `origin` (`real`, `written`, `augmented` or `external:<name>`), `source_url`, `license`,
-`split`.
+`split`, `group` (the near-duplicate/campaign cluster; augmented variants share their source's
+group, so cross-validation can keep them together).
 
 ## Labels
 
@@ -91,34 +92,45 @@ Ordinary marketing that is merely annoying is **legit**. Wizjer warns about frau
 
 1. **Real messages.** Every public warning by CERT Orange Polska (2016–2026) was read, both
    the quoted text and every screenshot: message screenshots were transcribed with OCR and
-   checked by hand. Sekurak and CERT Polska added more, and genuine municipal notices come
-   from the public SISMS feed. Placeholders the sources used (`[LINK]`, `[24 cyfry]`, masked
+   checked by hand. The same was done for Niebezpiecznik and Sekurak (2013–2026), Erste
+   Bank's warnings and about 2 200 security articles from Telepolis and Android.com.pl;
+   police and press warnings and CERT Polska added more. Genuine messages come from the
+   government's Alert RCB archive, the public SISMS feed of municipal notices, breach
+   notifications companies sent to their customers, and genuine SMS that the same sources
+   showed next to the fakes. Placeholders the sources used (`[LINK]`, `[24 cyfry]`, masked
    names) were filled with invented values or with real look-alike domains of the same brand,
    and every change is recorded in `edited`. See [sources.md](sources.md).
-2. **What was left out on purpose.** Messages whose text carries no sign of fraud were not
+2. **Ordinary human writing.** Everyday Polish sentences from Tatoeba (CC BY) are added as
+   genuine chat text when building with `--include-external`, so that plain conversation —
+   "chyba jestem w tarapatach", "oddzwoń jak możesz" — is not mistaken for a scam. Written
+   family, friends, coworker and marketplace chats (with typos, slang and no diacritics) cover
+   the messages people actually exchange, including the genuine versions of scam scenarios
+   (a real "new number" text, a child asking for money with context, a buyer asking "is it
+   still available?").
+3. **What was left out on purpose.** Messages whose text carries no sign of fraud were not
    labelled as scams, even when they were part of an attack: malware e-mails that read exactly
    like a real invoice or bank confirmation, or a "buyer" asking "is the bike still
    available?". Labelling them `scam` would teach the model to flag the genuine messages they
    copy. Example messages that the sources wrote themselves (illustrations, not received
    messages) went to `examples/` with a `note`, so the test split stays real.
-3. **Research for written examples.** Campaigns observed in 2025–2026 were catalogued from
+4. **Research for written examples.** Campaigns observed in 2025–2026 were catalogued from
    public warnings (CERT Polska, CERT Orange Polska, NASK, banks, couriers, FTC). Each entry in
    [sources.md](sources.md) records the date, the channel, the sender IDs used, the wording
    style and what the scam ultimately asks for — in our own words.
-4. **Writing.** Written examples follow each campaign's style with natural variation:
+5. **Writing.** Written examples follow each campaign's style with natural variation:
    different senders and numbers, with and without Polish diacritics, typos, obfuscation seen
    in the wild (look-alike letters, `0` for `O`, capital `I` for `l`, mojibake, spaced
    letters), short links, foreign numbers, and differing lengths and tones.
-5. **Genuine counterparts.** For every scam theme there are genuine messages of the same kind
+6. **Genuine counterparts.** For every scam theme there are genuine messages of the same kind
    (bank codes, courier notices, invoices, government notices, breach notifications, password
    resets), including warnings that contain scam vocabulary.
-6. **Augmentation (training only).** `build.py --augment N` adds variants of training
+7. **Augmentation (training only).** `build.py --augment N` adds variants of training
    messages that change what a detector must ignore — amounts, codes, dates, names, tracking
    numbers, diacritics, spacing — in both classes, so none of these becomes a scam signal on
    its own. Scam variants also get other real look-alike domains of the same brand, spoofed
    senders and look-alike letters. Variants are made after the split, so none leaks into
    validation or test.
-7. **Checks.** `scripts/build.py` validates every record, rejects exact duplicates, groups
+8. **Checks.** `scripts/build.py` validates every record, rejects exact duplicates, groups
    near-duplicates and campaigns so that variants never straddle splits, checks the language
    script (ignoring look-alike letters inside Latin words), and flags account numbers that
    happen to pass the IBAN checksum.
@@ -150,10 +162,15 @@ a false alarm on a genuine bank code costs more trust than a missed scam.
 
 ## Known limitations
 
-- **Real data is still small**: about 300 real Polish messages, most of them scams. Genuine
-  Polish messages come mainly from municipal notices and a few published examples, so the real
-  test set can't yet measure false positives on bank, courier or personal messages. A private,
-  consented test set of everyday messages is planned and will never be published.
+- **Real data is still modest**: about 1 150 real Polish messages (≈915 SMS, 170 e-mails, 70
+  chat/app notifications), about half of them scams. Genuine Polish messages are mostly Alert RCB and
+  municipal notices, plus breach notices and a few dozen genuine service messages, so the real
+  test set measures false positives on official notices well but on bank, courier and personal
+  messages only thinly; Tatoeba sentences and written chats stand in for personal messages. A
+  private, consented test set of everyday messages is planned and will never be published.
+- **Chat scams are the hardest part.** Single lines from a scam conversation ("I've paid,
+  give me your e-mail", "what is your age and job?") often carry no fraud signal on their own;
+  the app should judge such messages together with the conversation and the sender.
 - **OCR.** Screenshot transcriptions were checked by hand, but link paths and look-alike
   letters may be inexact; such records say so in `edited`.
 - **Coverage.** Polish SMS is the largest part; Polish e-mail is growing. English comes mostly

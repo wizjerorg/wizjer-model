@@ -2,7 +2,8 @@
 """Download the optional third-party datasets and convert them to the Wizjer schema.
 
 Files are saved to external/raw/ and converted to external/converted/<name>.jsonl. Neither
-folder is committed: these datasets keep their own licences (all CC BY 4.0) and must be cited.
+folder is committed: these datasets keep their own licences (CC BY 4.0, Tatoeba CC BY 2.0 FR)
+and must be cited.
 Afterwards run `python scripts/build.py --include-external`.
 
     python scripts/fetch_external.py                       # default selection
@@ -15,6 +16,7 @@ Standard library only.
 from __future__ import annotations
 
 import argparse
+import bz2
 import csv
 import io
 import json
@@ -68,6 +70,12 @@ SOURCES = {
         "url": ZENODO.format("Enron.csv"),
         "file": "Enron.csv",
         "cite": "Champa, Rabbi & Zibran (2024), Phishing Email Curated Datasets, doi:10.5281/zenodo.8339691",
+    },
+    "tatoeba_pl": {
+        "url": "https://downloads.tatoeba.org/exports/per_language/pol/pol_sentences.tsv.bz2",
+        "file": "pol_sentences.tsv.bz2",
+        "cite": "Tatoeba (tatoeba.org), Polish sentences, CC BY 2.0 FR",
+        "license": "CC-BY-2.0-FR",
     },
 }
 DEFAULT = list(SOURCES)
@@ -143,9 +151,27 @@ def convert_emails(name: str, path: Path, positive: str) -> list[dict]:
     return out
 
 
+def convert_tatoeba(path: Path) -> list[dict]:
+    """Everyday Polish sentences, as short chat or SMS messages from people (all genuine)."""
+    rng = random.Random(7)
+    out, seen = [], set()
+    for line in bz2.decompress(path.read_bytes()).decode("utf-8").split("\n"):
+        parts = line.split("\t")
+        if len(parts) != 3 or len(parts[2]) < 8 or parts[2].casefold() in seen:
+            continue
+        seen.add(parts[2].casefold())
+        rec = record("tatoeba_pl", rng.choice(["sms", "notification"]), "legit", parts[2])
+        rec.update(lang="pl", topic="conversation", license=SOURCES["tatoeba_pl"]["license"],
+                   source_url=f"https://tatoeba.org/sentences/show/{parts[0]}")
+        out.append(rec)
+    return out
+
+
 def convert(name: str, path: Path) -> list[dict]:
     if name == "uci_sms":
         return convert_uci(path)
+    if name == "tatoeba_pl":
+        return convert_tatoeba(path)
     if name == "mendeley_smishing":
         return convert_mendeley(path)
     # Nazario and Nigerian fraud are fraud by definition; the others mix fraud with plain spam.
