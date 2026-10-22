@@ -2,6 +2,6 @@
 
 Work in progress. `scripts/build.py` does not read this folder.
 
-- `uk/` — Ukrainian scam SMS, written for the project. They stay out of the build until a
-  matching set of genuine Ukrainian messages exists; a scam-only language would teach the
-  model that Ukrainian text itself is suspicious.
+Ukrainian scam SMS that used to wait here moved to `examples/uk/` once genuine Ukrainian
+messages existed to balance them (a scam-only language would teach the model that Ukrainian
+text itself is suspicious).

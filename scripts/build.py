@@ -50,7 +50,7 @@ SCAM_TYPES = {
     "parcel_fee", "bank", "code_theft", "family", "marketplace", "investment", "job", "utility",
     "government", "prize", "remote_access", "phishing", "gambling", "extortion", "fake_shop", "loan",
 }
-FIELDS = {"text", "sender", "subject", "app", "types", "hard", "campaign", "note"}
+FIELDS = {"text", "sender", "subject", "app", "types", "hard", "campaign", "note", "script"}
 OWN = {"real", "written"}  # origins kept in this repository (not third-party)
 REAL_FIELDS = FIELDS | {"source_url", "date", "edited"}
 MAX_LEN = {"sms": 1200, "notification": 1500, "email": 6000}
@@ -79,6 +79,7 @@ class Record:
     types: list[str] = field(default_factory=list)
     hard: bool = False
     campaign: str = ""
+    script: str = ""  # "latin" for Ukrainian typed in Latin letters (transliterated SMS)
     origin: str = "written"
     license: str = LICENSE
     source_url: str = ""
@@ -173,10 +174,14 @@ def check_record(rec: Record, problems: Problems) -> None:
     elif rec.types:
         problems.error(where, "`types` is only for scams")
 
+    if rec.script not in ("", "latin") or (rec.script and rec.lang != "uk"):
+        problems.error(where, "`script` can only be \"latin\", for Ukrainian written in Latin letters")
     share = cyrillic_share(f"{rec.subject} {rec.text}")
     if share is not None:
-        if rec.lang == "uk" and share < 0.5:
-            problems.error(where, f"lang is uk but only {share:.0%} of letters are Cyrillic")
+        if rec.lang == "uk" and rec.script == "latin" and share > 0.1:
+            problems.error(where, f"script is latin but {share:.0%} of letters are Cyrillic")
+        if rec.lang == "uk" and not rec.script and share < 0.5:
+            problems.error(where, f"lang is uk but only {share:.0%} of letters are Cyrillic (transliterated? add \"script\": \"latin\")")
         if rec.lang in {"pl", "en"} and share > 0.1:
             problems.error(where, f"lang is {rec.lang} but {share:.0%} of letters are Cyrillic")
 
@@ -230,7 +235,7 @@ def read_examples(problems: Problems, root: Path = EXAMPLES, origin: str = "writ
                 lang=lang, source=source, label=label, category=category, where=where,
                 text=obj["text"], sender=str(obj.get("sender", "")), subject=str(obj.get("subject", "")),
                 app=str(obj.get("app", "")), types=list(dict.fromkeys(types)), hard=bool(obj.get("hard", False)),
-                campaign=str(obj.get("campaign", "")),
+                campaign=str(obj.get("campaign", "")), script=str(obj.get("script", "")),
                 origin=origin,
                 source_url=str(obj.get("source_url", "")),
             )

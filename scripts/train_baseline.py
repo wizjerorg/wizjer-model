@@ -55,16 +55,40 @@ BRANDS = {
     r"netflix": ("netflix.com",), r"facebook|messenger": ("facebook.com", "fb.com"), r"whatsapp": ("whatsapp.com", "wa.me"),
 }
 META_WEIGHT = 0.3
-# Cues scams combine (on text without Polish letters). Alone they are common in genuine messages
-# too; the model learns how much each is worth, and especially their combinations with a link.
+# Cues scams combine (on lower-case text without Polish letters; each is Polish, then Ukrainian).
+# Alone they are common in genuine messages too; the model learns how much each is worth, and
+# especially their combinations with a link.
 CUES = {
-    "urgent": re.compile(r"\bpilne|natychmiast|niezwlocznie|w ciagu (24|48|12|2) ?(h|godz)|ostatni[ae]? (szans|wezwan|przypomn)|do godziny|dzisiaj do|termin (uplywa|mija)"),
-    "threat": re.compile(r"zablokowan|zawieszon|zostanie (zablok|zawiesz|usunie|anulow|wylacz|odlacz)|komornik|egzekuc|sad\b|do sadu|policj|prokurat|odlaczeni|utraci"),
-    "pay": re.compile(r"doplat|zaplac|oplac|uregul|wplac|przelej|platnos|naleznos|zaleglos|kwot[aey] \d"),
-    "credentials": re.compile(r"zaloguj|zweryfikuj|weryfikac|potwierdz (swoje )?dane|zaktualizuj (swoje )?dane|haslo|dane karty|numer karty|kod (blik|sms|weryfik|autoryz)"),
-    "elsewhere": re.compile(r"whatsapp|telegram|napisz do mnie|nowy numer|odpisz|odpowiedz (tak|na ten)|zadzwon (pod|na) "),
-    "prize": re.compile(r"wygral|wygrana|nagrod|gratul|bonus|darmow|prezent|zwrot (podatku|srodkow|pieniedzy)|odbierz"),
+    "urgent": re.compile(r"\bpilne|natychmiast|niezwlocznie|w ciagu (24|48|12|2) ?(h|godz)|ostatni[ae]? (szans|wezwan|przypomn)|do godziny|dzisiaj do|termin (uplywa|mija)|"
+                         r"терміново|негайно|протягом (24|48|12|2|однієї|доби)|останн\w* (попереджен|нагадуван|шанс)|сьогодні до"),
+    "threat": re.compile(r"zablokowan|zawieszon|zostanie (zablok|zawiesz|usunie|anulow|wylacz|odlacz)|komornik|egzekuc|sad\b|do sadu|policj|prokurat|odlaczeni|utraci|"
+                         r"заблоков|призупин|буде (заблок|видал|скасов|відключ|закрит)|арешт|виконавч|суд\b|судов|поліці|прокурат|кримінальн|відключен|втрат(ите|ити)|штраф"),
+    "pay": re.compile(r"doplat|zaplac|oplac|uregul|wplac|przelej|platnos|naleznos|zaleglos|kwot[aey] \d|"
+                      r"оплат|сплат|доплат|переказ|заборгован|борг|передоплат|внес(іть|ти)|переведіть"),
+    "credentials": re.compile(r"zaloguj|zweryfikuj|weryfikac|potwierdz (swoje )?dane|zaktualizuj (swoje )?dane|haslo|dane karty|numer karty|kod (blik|sms|weryfik|autoryz)|"
+                              r"podaj (mi )?(kod|ten kod|haslo)|przepisz (mi )?(go|kod)|(wyslij|przeslij|podeslij) (mi )?(kod|blik|ten kod)|potwierdz kodem|"
+                              r"увійд|увійти|підтверд\w* (дані|акаунт|особ|картк|свій)|верифікац|пароль|дані (вашої )?картки|номер картки|cvv|термін дії картки|"
+                              r"код (з|із) (смс|sms)|код підтвердж|баланс картки|скинь\w* (мені )?(код|цифр)|перешл\w* (мені )?(його|код)|повідом\w* код"),
+    "elsewhere": re.compile(r"whatsapp|telegram|napisz do mnie|nowy numer|odpisz|odpowiedz (tak|na ten)|zadzwon (pod|na) |"
+                            r"телеграм|вайбер|ватсап|вотсап|напиш(іть|и) (мені|у|в) |новий номер|пишу з (номера|чужого)|зателефонуй"),
+    "prize": re.compile(r"wygral|wygrana|nagrod|gratul|bonus|darmow|prezent|zwrot (podatku|srodkow|pieniedzy)|odbierz|"
+                        r"виграл|виграш|розіграш|подарун|безкоштовн|бонус|вітаємо|отримайте|компенсаці|виплат\w* (допомог|компенсац|грош)|грошов\w* допомог"),
+    # Malware e-mails: an attachment to open, often a password-protected archive or a script file.
+    "attachment": re.compile(r"w zalacz|zalacz(ony|ona|one|nik)|pobierz (plik|dokument|fakture)|haslo do (pliku|zalacznika|archiwum|faktury|otwarcia)|"
+                             r"у вкладенн|вкладенн|завантаж\w* (файл|документ)|пароль до (файлу|архів)|"
+                             r"\.(zip|rar|7z|exe|js|vbs|docm|xlsm|iso|img|hta|scr|jar|apk)\b"),
+    # Fake bank security staff: "if it wasn't you, call…", case numbers, "safe account".
+    "callback": re.compile(r"(jesli|jezeli|gdy) (to )?nie (ty|byl|ja|zlecal|dokonal|autoryzow)|nie (zlecal|autoryzowal|rozpoznaj)|zadzwon (natychmiast|pilnie|niezwlocznie|teraz)|oddzwon|"
+                           r"\bref[:. #]|opiekun\w* sprawy|n(r|umer) sprawy|(dzial|wydzial|departament)\w* bezpieczenstwa|podejrzan\w* (aktywnos|transakc|logowa|operac|prob)|"
+                           r"wykryto (logowanie|probe|podejrz|nowe urzadz)|nie rozlaczaj|konsultant\w* (oddzwoni|zadzwoni|skontaktuje)|bezpieczn\w* (rachun|kont)|"
+                           r"якщо це (були )?не ви|служб\w* безпеки|підозріл\w* (операц|транзакц|вхід|активн|спроб)|спроб\w* входу|очікуйте (на )?дзвінк|зателефонує|"
+                           r"співробітник\w* (банку|служби)|безпечн\w* рахун|не кладіть слухавку"),
+    # "Someone posted your (edited) photos" lures and sextortion.
+    "exposure": re.compile(r"(twoje|twoich|twoimi|twojego) (przerobion\w* |prywatne |nagie |intymne )?(zdjec|fotk|fotek|nagran|filmik)|przerobi\w* (zdjec|fotk)|nagie|intymn|"
+                           r"kompromit|nagral\w* (cie|ciebie)|wrzucil\w* (twoje|tw)|"
+                           r"ваші (інтимн\w* |приватн\w* )?(фото|відео|світлин)|інтимн|компромат"),
 }
+ACTIVE_CUES = set(CUES)
 CYRILLIC = re.compile(r"[Ͱ-ϿЀ-ӿ]")
 LATIN = re.compile(r"[a-ząćęłńóśźż]", re.I)
 AMOUNT = re.compile(r"\d+(?:[.,]\d{2})?\s?(?:zł|zl|pln|eur|€|usd|\$)", re.I)
@@ -146,7 +170,7 @@ def features(rec: dict) -> dict[int, float]:
         meta["brand.link.own" if own else "brand.link.other"] += 1
     meta["mixed.script"] += sum(1 for w in text.split() if CYRILLIC.search(w) and LATIN.search(w))
     meta["shortener"] += len(SHORTENER.findall(text))
-    cues = sorted(name for name, pattern in CUES.items() if pattern.search(plain))
+    cues = sorted(name for name, pattern in CUES.items() if name in ACTIVE_CUES and pattern.search(plain))
     for name in cues:
         feats["cue." + name] += 1
         if hosts:
@@ -230,22 +254,39 @@ def fold_of(rec: dict, k: int) -> int:
     return int.from_bytes(hashlib.blake2b(key.encode(), digest_size=4).digest(), "little") % k
 
 
+MIN_LEGIT = 50  # genuine messages needed before a language or channel gets a threshold of its own
+
+
 def pick_thresholds(scored: list[tuple[float, dict]], max_fpr: float) -> dict[str, float]:
-    """Per language: flag at most max_fpr of the genuine messages scored (our own ones where we have enough)."""
+    """Flag at most max_fpr of the genuine messages scored, per language ("pl") and, where there are
+    enough genuine messages, per language and channel ("pl/email"); our own messages where we have
+    enough of them, otherwise every genuine message of that language."""
+    def cut(scores: list[float]) -> float:
+        pool = sorted(scores, reverse=True)
+        return max(pool[min(int(len(pool) * max_fpr), len(pool) - 1)] + 1e-9, 0.05)
+
     out = {}
     for lang in sorted({r["lang"] for _, r in scored}):
         legit = [(s, r) for s, r in scored if r["label"] == "legit" and r["lang"] == lang]
-        own = [s for s, r in legit if r["origin"] in OWN]
-        pool = sorted(own if len(own) >= 50 else [s for s, _ in legit], reverse=True)
-        out[lang] = max(pool[min(int(len(pool) * max_fpr), len(pool) - 1)] + 1e-9, 0.05) if pool else 0.5
+        own_only = sum(r["origin"] in OWN for _, r in legit) >= MIN_LEGIT
+        pool = [(s, r) for s, r in legit if r["origin"] in OWN or not own_only]
+        out[lang] = cut([s for s, _ in pool]) if pool else 0.5
+        for source in sorted({r["source"] for _, r in pool}):
+            sub = [s for s, r in pool if r["source"] == source]
+            if len(sub) >= MIN_LEGIT:
+                out[f"{lang}/{source}"] = cut(sub)
     return out
 
 
+def threshold(t: dict[str, float], r: dict) -> float:
+    return t.get(f"{r['lang']}/{r['source']}", t[r["lang"]])
+
+
 def metrics(scored: list[tuple[float, dict]], t: dict[str, float]) -> dict:
-    tp = sum(s >= t[r["lang"]] and r["label"] == "scam" for s, r in scored)
-    fn = sum(s < t[r["lang"]] and r["label"] == "scam" for s, r in scored)
-    fp = sum(s >= t[r["lang"]] and r["label"] == "legit" for s, r in scored)
-    tn = sum(s < t[r["lang"]] and r["label"] == "legit" for s, r in scored)
+    tp = sum(s >= threshold(t, r) and r["label"] == "scam" for s, r in scored)
+    fn = sum(s < threshold(t, r) and r["label"] == "scam" for s, r in scored)
+    fp = sum(s >= threshold(t, r) and r["label"] == "legit" for s, r in scored)
+    tn = sum(s < threshold(t, r) and r["label"] == "legit" for s, r in scored)
     return {"n": len(scored), "recall": tp / (tp + fn) if tp + fn else float("nan"),
             "fpr": fp / (fp + tn) if fp + tn else float("nan"),
             "precision": tp / (tp + fp) if tp + fp else float("nan"), "fp": fp, "fn": fn, "auc": auc(scored)}
@@ -270,9 +311,12 @@ def main() -> int:
     parser.add_argument("--cv", type=int, default=5,
                         help="folds for choosing the threshold on out-of-fold scores of train + validation (0: train on train, "
                              "threshold on validation — quicker, but rests on few genuine messages)")
+    parser.add_argument("--drop-cue", nargs="*", default=[], choices=sorted(CUES), help="leave out these cue features")
+    parser.add_argument("--out", type=Path, default=DIST / "BASELINE.md", help="where to write the report")
     parser.add_argument("--seed", type=int, default=13)
     args = parser.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
+    ACTIVE_CUES.difference_update(args.drop_cue)
     started = time.time()
 
     def log(message: str) -> None:
@@ -314,7 +358,8 @@ def main() -> int:
     # threshold choice at all; with AUC it is the fairest way to compare runs.
     t_test = pick_thresholds(test, args.max_fpr)
     lines = ["# Baseline results", "",
-             f"Thresholds {shown}: at most {args.max_fpr:.0%} of genuine messages flagged per language, on {basis} "
+             f"Thresholds {shown}: at most {args.max_fpr:.0%} of genuine messages flagged per language, and per channel "
+             f"where it has at least {MIN_LEGIT} genuine messages, on {basis} "
              f"({legit_basis.get('pl', 0)} of our own genuine Polish messages).",
              f"\"Recall @{args.max_fpr:.0%} FPR\" instead sets the threshold on the test set itself "
              f"({', '.join(f'{k} {v:.3f}' for k, v in t_test.items())}); use it, with AUC, to compare runs.", ""]
@@ -338,18 +383,39 @@ def main() -> int:
         lines.append(f"| {name} | {m['n']} | {m['recall']:.1%} | {m['fpr']:.1%} | {m['precision']:.1%} | {m['fp']} | {m['fn']} | "
                      f"{m['auc']:.3f} | {fixed['recall']:.1%} |")
 
-    def mistakes(kind: str) -> list[str]:
-        own = [(s, r) for s, r in test + held_out if r["origin"] in OWN and r["lang"] == "pl"]
+    if args.cv:
+        # Held-out scores also cover the written messages and Ukrainian, which test (real only) can't.
+        lines += ["", "## Cross-validation: held-out folds of train + validation (our own messages)", "",
+                  "Every message was scored by a model that did not see it or its near-duplicates. Written messages are",
+                  "cleaner than real ones, so these numbers are more optimistic than test.", "",
+                  "| Subset | n | Scam recall | False-positive rate | FP | FN | AUC |", "|---|---:|---:|---:|---:|---:|---:|"]
+        cv_sets = defaultdict(list)
+        for s, r in held_out:
+            if r["origin"] in OWN:
+                cv_sets[f"{r['lang']} all"].append((s, r))
+                cv_sets[f"{r['lang']} {r['origin']}"].append((s, r))
+                cv_sets[f"{r['lang']} {r['source']}"].append((s, r))
+                if r["hard"]:
+                    cv_sets[f"{r['lang']} hard"].append((s, r))
+        for name in sorted(cv_sets):
+            m = metrics(cv_sets[name], t)
+            lines.append(f"| {name} | {m['n']} | {m['recall']:.1%} | {m['fpr']:.1%} | {m['fp']} | {m['fn']} | {m['auc']:.3f} |")
+
+    def mistakes(kind: str, lang: str, limit: int) -> list[str]:
+        own = [(s, r) for s, r in test + held_out if r["origin"] in OWN and r["lang"] == lang]
         if kind == "fp":
-            bad = sorted([(s, r) for s, r in own if r["label"] == "legit" and s >= t["pl"]], key=lambda x: -x[0])
+            bad = sorted([(s, r) for s, r in own if r["label"] == "legit" and s >= threshold(t, r)], key=lambda x: -x[0])
         else:
-            bad = sorted([(s, r) for s, r in own if r["label"] == "scam" and s < t["pl"]], key=lambda x: x[0])
-        return [f"- {s:.2f} [{r['split']}/{r['origin']}/{r['source']}/{r['topic'] or ','.join(r['types'])}] {r['text'][:200]!r}" for s, r in bad[:60]]
+            bad = sorted([(s, r) for s, r in own if r["label"] == "scam" and s < threshold(t, r)], key=lambda x: x[0])
+        return [f"- {s:.2f} [{r['split']}/{r['origin']}/{r['source']}/{r['topic'] or ','.join(r['types'])}] {r['text'][:200]!r}" for s, r in bad[:limit]]
 
     scope = "test and held-out folds" if args.cv else "validation + test"
-    lines += ["", f"## Genuine Polish messages flagged as scams ({scope})", ""] + (mistakes("fp") or ["(none)"])
-    lines += ["", f"## Polish scams missed ({scope})", ""] + (mistakes("fn") or ["(none)"])
-    (DIST / "BASELINE.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    names = {"pl": "Polish", "uk": "Ukrainian"}
+    for lang, limit in (("pl", 60), ("uk", 20)):
+        if lang in t:
+            lines += ["", f"## Genuine {names[lang]} messages flagged as scams ({scope})", ""] + (mistakes("fp", lang, limit) or ["(none)"])
+            lines += ["", f"## {names[lang]} scams missed ({scope})", ""] + (mistakes("fn", lang, limit) or ["(none)"])
+    args.out.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines[:5 + len(subsets) + 2]))
     log("done")
     return 0

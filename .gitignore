@@ -5,6 +5,9 @@ dist/
 external/raw/
 external/converted/
 
+# Local-only tools and their state, never committed
+local/
+
 # Python
 __pycache__/
 *.pyc

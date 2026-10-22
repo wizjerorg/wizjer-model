@@ -13,3 +13,4 @@
 {"text": "Ваша посилка в дорозі, але кур'єр не може зв'язатися з вами. Оберіть зручний час доставки: https://kurier-ua.site/time"}
 {"sender": "NovaPoshta", "text": "НП: зміна умов зберігання. Ваша посилка буде утилізована через 12 год, якщо не підтвердите дані картки для оплати зберігання: novaposhta-ua.cc"}
 {"text": "Укрпошта: ваше відправлення було затримано через несплачений збір. Сума: 17,00 грн. https://ukrposhta-zbir.top/oplata"}
+{"sender": "NP-Info", "script": "latin", "text": "Nova Poshta: posylka zatrymana cherez nepovnu adresu. Onovit dani ta splatit 29 grn: np-dostavka.site/pay"}

@@ -14,9 +14,11 @@ must be cited if you use it.
 | `spamassassin` | same collection — SpamAssassin public corpus | CC BY 4.0 | 14.9 MB | spam → `spam`, ham → `legit` |
 | `ceas08` | same collection — CEAS 2008 | CC BY 4.0 | 67.9 MB | spam → `spam`, ham → `legit` |
 | `enron` | same collection — Enron | CC BY 4.0 | 44.8 MB | spam → `spam`, ham → `legit` |
-| `tatoeba_pl` | [Tatoeba](https://tatoeba.org/) Polish sentences (per-language export) | CC BY 2.0 FR | 1.7 MB, ~136 000 sentences | all → `legit` (Polish, as `sms` or `notification`, topic `conversation`); each record keeps its `tatoeba.org/sentences/show/<id>` link for attribution |
+| `tatoeba_pl`, `tatoeba_uk` | [Tatoeba](https://tatoeba.org/) Polish and Ukrainian sentences (per-language exports) | CC BY 2.0 FR | 1.7 MB / 2.5 MB | all → `legit` (as `sms` or `notification`, topic `conversation`); each record keeps its `tatoeba.org/sentences/show/<id>` link for attribution |
+| `nkjp1m` | [National Corpus of Polish](https://nkjp.pl/), 1-million-word manually annotated subcorpus v1.2 (Przepiórkowski et al.) — conversation transcripts, internet forum and chat texts, letters | CC BY | 39 MB | all → `legit` (conversation → `sms` or `notification`; internet texts → `notification`, or `email` when long); topic `conversation` |
+| `wiki_pl_talk` | Polish Wikipedia user talk pages, random sample via the MediaWiki API; one record per signed comment, signatures, templates and markup removed, bot and template messages dropped | CC BY-SA 4.0 | ~3 000 pages | all → `legit` (`notification`, or `email` when long); topic `conversation`; each record keeps its page link |
 
-All datasets are fetched by default (about 150 MB) and each is capped at 6 000 random records
+All datasets are fetched by default (about 200 MB) and each is capped at 6 000 random records
 (`--max-per-source`).
 
 ## Notes
@@ -30,3 +32,10 @@ All datasets are fetched by default (about 150 MB) and each is capped at 6 000 r
 - Tatoeba sentences are single sentences, many translated from English, so they are ordinary
   human Polish rather than real SMS. They teach the model what normal writing looks like; the
   decision threshold is still chosen on the project's own genuine messages.
+- NKJP conversations are transcribed speech and its internet texts are forum and chat posts
+  from the 2000s; Wikipedia talk comments are discussions between editors. None of them is a
+  real SMS, but together they give the model thousands of natural, unscripted Polish messages
+  with typos, slang, questions and requests, so that ordinary talk is not read as fraud.
+- Wikipedia talk comments are signed by their authors: the converter drops signatures, but
+  usernames may still appear in the text. Like the other corpora, use them locally for
+  training and don't republish the converted files.

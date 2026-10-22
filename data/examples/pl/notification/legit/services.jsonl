@@ -24,3 +24,5 @@
 {"app": "Uber", "sender": "Uber", "text": "Twój kierowca Piotr przyjedzie za 3 min. Toyota Corolla, srebrna, WX 4821K"}
 {"app": "Bolt", "sender": "Bolt", "text": "Twoje zamówienie z Bolt Food jest w drodze 🛵 Przewidywana dostawa 19:40"}
 {"app": "Google", "sender": "Google", "text": "Czy to Ty próbujesz się zalogować? Kliknij Tak na swoim telefonie, aby kontynuować. Urządzenie: Windows, Gdańsk"}
+{"app": "Revolut", "sender": "Revolut", "text": "Twoje środki są bezpieczne. Revolut nigdy nie poprosi Cię o przelanie pieniędzy na „bezpieczne konto”. Rozłącz się, jeśli ktoś tak twierdzi."}
+{"app": "WhatsApp", "sender": "WhatsApp", "text": "Twój kod WhatsApp: 482-911. Nie udostępniaj tego kodu nikomu."}

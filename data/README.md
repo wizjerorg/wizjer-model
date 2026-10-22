@@ -19,7 +19,7 @@ drafts/                                            work in progress, not used by
 | `real` | Messages people actually received, quoted or shown in public warnings and genuine notices published by their senders. | train, validation and **all of test** |
 | `written` | Messages written for this project in the style of documented campaigns, plus genuine-looking counterparts. Fills gaps the real data can't (rare scam types, hard negatives). | train and validation only |
 | `augmented` | Variants of training messages made at build time (`--augment`). | train only |
-| `external:<name>` | Third-party corpora, downloaded on demand: English SMS and e-mail datasets, and everyday Polish sentences from Tatoeba (genuine). | all splits |
+| `external:<name>` | Third-party corpora, downloaded on demand: English SMS and e-mail datasets, and genuine everyday Polish and Ukrainian writing (Tatoeba, the National Corpus of Polish, Polish Wikipedia talk pages). | all splits |
 
 | Path part  | Values | Meaning |
 |------------|--------|---------|
@@ -41,6 +41,7 @@ Each line is one JSON object. Fields implied by the path are **not** repeated in
 | `hard`     | optional | `true` for deliberately confusable examples: genuine messages that look alarming, or scams with no obvious red flags. Used for separate evaluation. |
 | `campaign` | optional | Short id grouping variants of the same campaign so they always land in the same split. |
 | `note`     | optional | Free-text note for reviewers (not used in training). |
+| `script`   | optional | `"latin"` for Ukrainian typed in Latin letters (transliterated SMS such as "Vam dostupna vyplata"); otherwise Ukrainian must be mostly Cyrillic. |
 | `source_url` | `real` only, required | The public page the message comes from. |
 | `date`     | `real` only | Publication date of that page. |
 | `edited`   | `real` only | Every change made to the original: placeholders filled in, links re-armed (`hxxp` → `http`), personal data replaced, OCR transcription. A real record without `edited` is verbatim. |
@@ -92,21 +93,33 @@ Ordinary marketing that is merely annoying is **legit**. Wizjer warns about frau
 
 1. **Real messages.** Every public warning by CERT Orange Polska (2016–2026) was read, both
    the quoted text and every screenshot: message screenshots were transcribed with OCR and
-   checked by hand. The same was done for Niebezpiecznik and Sekurak (2013–2026), Erste
-   Bank's warnings and about 2 200 security articles from Telepolis and Android.com.pl;
-   police and press warnings and CERT Polska added more. Genuine messages come from the
+   checked by hand. The same was done for CERT Polska's warnings (moje.cert.pl), Niebezpiecznik,
+   Sekurak and Zaufana Trzecia Strona (2010–2026), Erste Bank's warnings and about 2 500
+   security articles from Telepolis, Android.com.pl, Instalki, GSMManiak and Tabletowo; police
+   and press warnings added more. Genuine messages come from the
    government's Alert RCB archive, the public SISMS feed of municipal notices, breach
    notifications companies sent to their customers, and genuine SMS that the same sources
    showed next to the fakes. Placeholders the sources used (`[LINK]`, `[24 cyfry]`, masked
    names) were filled with invented values or with real look-alike domains of the same brand,
    and every change is recorded in `edited`. See [sources.md](sources.md).
-2. **Ordinary human writing.** Everyday Polish sentences from Tatoeba (CC BY) are added as
-   genuine chat text when building with `--include-external`, so that plain conversation —
-   "chyba jestem w tarapatach", "oddzwoń jak możesz" — is not mistaken for a scam. Written
+2. **Ordinary human writing.** Openly licensed Polish text is added as genuine messages when
+   building with `--include-external`: everyday sentences from Tatoeba (CC BY), conversation
+   transcripts and internet chat and forum posts from the National Corpus of Polish (NKJP-1M,
+   CC BY), and comments from Polish Wikipedia user talk pages (CC BY-SA). This is unscripted
+   human writing, so that plain conversation — "chyba jestem w tarapatach", "oddzwoń jak
+   możesz", "możesz mi pomóc z tym artykułem?" — is not mistaken for a scam. Written
    family, friends, coworker and marketplace chats (with typos, slang and no diacritics) cover
    the messages people actually exchange, including the genuine versions of scam scenarios
    (a real "new number" text, a child asking for money with context, a buyer asking "is it
    still available?").
+   **Ukrainian** follows the same plan: Tatoeba sentences, written genuine messages from the
+   services Ukrainians use at home and in Poland (PrivatBank, monobank, Oschadbank, Nova
+   Poshta, Ukrposhta, Diia, DTEK outage schedules, air-raid alerts, Helsi, ZUS, PESEL), natural
+   chats (some mixing in Polish words, as Ukrainians in Poland write), and written scams in
+   the style of documented Ukrainian schemes (fake aid payouts, "safe account", OLX "safe
+   deal", hijacked friends asking to vote or lend). A few real Ukrainian scams come from
+   screenshots in ITC.ua and Fakty articles. Ukrainian SMS are often typed in Latin letters;
+   such records carry `"script": "latin"`.
 3. **What was left out on purpose.** Messages whose text carries no sign of fraud were not
    labelled as scams, even when they were part of an attack: malware e-mails that read exactly
    like a real invoice or bank confirmation, or a "buyer" asking "is the bike still
@@ -162,11 +175,11 @@ a false alarm on a genuine bank code costs more trust than a missed scam.
 
 ## Known limitations
 
-- **Real data is still modest**: about 1 150 real Polish messages (≈915 SMS, 170 e-mails, 70
-  chat/app notifications), about half of them scams. Genuine Polish messages are mostly Alert RCB and
+- **Real data is still modest**: about 1 190 real Polish messages (≈930 SMS, 180 e-mails, 80
+  chat/app notifications), half of them scams. Genuine Polish messages are mostly Alert RCB and
   municipal notices, plus breach notices and a few dozen genuine service messages, so the real
   test set measures false positives on official notices well but on bank, courier and personal
-  messages only thinly; Tatoeba sentences and written chats stand in for personal messages. A
+  messages only thinly; the external corpora and written chats stand in for personal messages. A
   private, consented test set of everyday messages is planned and will never be published.
 - **Chat scams are the hardest part.** Single lines from a scam conversation ("I've paid,
   give me your e-mail", "what is your age and job?") often carry no fraud signal on their own;
@@ -174,7 +187,9 @@ a false alarm on a genuine bank code costs more trust than a missed scam.
 - **OCR.** Screenshot transcriptions were checked by hand, but link paths and look-alike
   letters may be inexact; such records say so in `edited`.
 - **Coverage.** Polish SMS is the largest part; Polish e-mail is growing. English comes mostly
-  from external corpora. Ukrainian is in `drafts/` until it has genuine counterparts.
+  from external corpora. Ukrainian is mostly written (about 200 genuine and 150 scam
+  messages, plus Tatoeba) with only a handful of real messages, so its test numbers are
+  anecdotal; the cross-validated scores in `dist/BASELINE.md` are the better guide for it.
 - **Time.** Scams change quickly; real messages span 2016–2026 (`date`), written ones reflect
   2025–2026. New campaigns should be added as they appear.
 - **Context.** A message alone can be ambiguous ("Mum, my battery died, pick me up at 6").

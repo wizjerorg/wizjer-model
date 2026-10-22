@@ -57,8 +57,8 @@ same split, and writes `dist/train.jsonl`, `dist/validation.jsonl`, `dist/test.j
 `dist/STATS.md`.
 
 To add the optional third-party corpora (English SMS spam/smishing and phishing e-mails, CC BY
-4.0; everyday Polish sentences from Tatoeba, CC BY 2.0 FR) and training-only variants of each
-message:
+4.0; everyday Polish and Ukrainian writing from Tatoeba, the National Corpus of Polish and
+Polish Wikipedia talk pages, CC BY / CC BY-SA) and training-only variants of each message:
 
 ```bash
 python scripts/fetch_external.py
@@ -71,10 +71,12 @@ real data was gathered.
 ## Baseline
 
 `scripts/train_baseline.py` trains a small logistic-regression classifier (character and word
-n-grams plus a few message features: links, brand/link mismatch, look-alike letters, urgency and
-payment cues) on `dist/`. The decision threshold per language flags at most 1% of genuine
-messages, measured with grouped cross-validation over train and validation so that it rests on
-every genuine message rather than the few in validation; the final model then trains on both. It
+n-grams plus a few message features: links, brand/link mismatch, look-alike letters, and Polish
+and Ukrainian cues such as urgency, payment, code requests, attachments and "call our security
+department") on `dist/`. The decision thresholds, per language and per channel
+where there are enough genuine messages, flag at most 1% of genuine messages, measured with
+grouped cross-validation over train and validation so that they rest on every genuine message
+rather than the few in validation; the final model then trains on both. It
 writes `dist/BASELINE.md`: test results per language and channel (with AUC and recall at 1%
 false positives, the figures to compare runs by), and the genuine messages it flags and scams it
 misses — the list to work from when adding data. A run takes about half an hour on a laptop;

@@ -8,3 +8,6 @@
 {"app": "Messenger", "sender": "Ewelina Kozłowska", "text": "Hej, potrzebuję szybko BLIKa na 200 zł, zapłacę ci jutro. Wyślij kod tutaj bo telefon mam na wyczerpaniu"}
 {"app": "WhatsApp", "sender": "Janek Winnicki", "text": "Hej, możesz mi teraz dać BLIK na 300 zł? Przekroczyłem limity na karcie i pilnie potrzebuję. Oddam jeszcze dziś.", "types": ["code_theft", "family"], "note": "example message shown in CERT Orange Polska's article https://cert.orange.pl/ostrzezenia/oszustwo-na-blik-zobacz-jak-nie-stracic-pieniedzy/"}
 {"app": "WhatsApp", "sender": "Janek Winnicki", "text": "Bardzo ci dziękuję, podaj mi kod teraz bo akurat mogę go wprowadzić.", "types": ["code_theft", "family"], "note": "example message shown in CERT Orange Polska's article https://cert.orange.pl/ostrzezenia/oszustwo-na-blik-zobacz-jak-nie-stracic-pieniedzy/"}
+{"app": "Messenger", "sender": "Ania Kowalska", "text": "Hej, możesz mi pomóc? Muszę pilnie zapłacić za zakupy online a mój BLIK nie działa. Wyślesz mi kod BLIK na 600 zł? Oddam jutro rano"}
+{"app": "Messenger", "sender": "Kuba Nowak", "text": "Siema, przyjdzie Ci SMS z kodem od Facebooka, przepisz mi go proszę, bo zgubiłem dostęp do konta i podałem Twój numer"}
+{"app": "WhatsApp", "sender": "Mama", "text": "Córciu dostaniesz zaraz SMS z kodem z WhatsAppa, wyślij mi go bo mi się telefon zresetował i nie mogę się zalogować"}

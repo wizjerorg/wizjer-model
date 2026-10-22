@@ -13,3 +13,4 @@
 {"text": "Ощадбанк: вам належить компенсація за обслуговування рахунку 1 800 грн. Отримайте: oschadbank-kompensatsiia.info", "types": ["bank", "prize"]}
 {"sender": "monobank", "text": "monobank: спроба входу у ваш застосунок. Код для скасування — не повідомляйте нікому, крім нашого співробітника, який вам зателефонує.", "types": ["bank", "code_theft"], "hard": true}
 {"text": "Revolut: ваш акаунт обмежено. Підтвердіть особу протягом 24 годин: revolut-ua-verify.com"}
+{"sender": "Bank-Info", "script": "latin", "text": "Vasha kartka zablokovana cherez pidozrilu operatsiiu. Dlia rozblokuvannia pereidit: privat-unlock.top/ua"}
