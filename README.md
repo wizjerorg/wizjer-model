@@ -71,9 +71,10 @@ real data was gathered.
 ## Baseline
 
 `scripts/train_baseline.py` trains a small logistic-regression classifier (character and word
-n-grams plus a few message features: links, brand/link mismatch, look-alike letters, and Polish
-and Ukrainian cues such as urgency, payment, code requests, attachments and "call our security
-department") on `dist/`. The decision thresholds, per language and per channel
+n-grams plus a few message features: links, brand/link mismatch, an e-mail sender whose
+address doesn't match the brand it names, look-alike letters, and Polish and Ukrainian cues such
+as urgency, payment, code requests, attachments and "call our security department") on `dist/`.
+The decision thresholds, per language and per channel
 where there are enough genuine messages, flag at most 1% of genuine messages, measured with
 grouped cross-validation over train and validation so that they rest on every genuine message
 rather than the few in validation; the final model then trains on both. It
@@ -84,6 +85,14 @@ misses — the list to work from when adding data. A run takes about half an hou
 
 ```bash
 python scripts/train_baseline.py
+```
+
+To use the model in the app, save it and pack it into one 2 MB file (16-bit weights, the
+thresholds, and test messages with their scores for checking a port of the feature code):
+
+```bash
+python scripts/train_baseline.py --save dist/model.json
+python scripts/export_model.py dist/model.json dist/wizjer-baseline.bin
 ```
 
 Other tools: `scripts/make_pools.py` refreshes the look-alike domains from CERT Polska's public

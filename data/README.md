@@ -94,9 +94,9 @@ Ordinary marketing that is merely annoying is **legit**. Wizjer warns about frau
 1. **Real messages.** Every public warning by CERT Orange Polska (2016–2026) was read, both
    the quoted text and every screenshot: message screenshots were transcribed with OCR and
    checked by hand. The same was done for CERT Polska's warnings (moje.cert.pl), Niebezpiecznik,
-   Sekurak and Zaufana Trzecia Strona (2010–2026), Erste Bank's warnings and about 2 500
-   security articles from Telepolis, Android.com.pl, Instalki, GSMManiak and Tabletowo; police
-   and press warnings added more. Genuine messages come from the
+   Sekurak and Zaufana Trzecia Strona (2010–2026), Erste Bank's warnings and about 3 500
+   security articles from Telepolis, Android.com.pl, Instalki, GSMManiak, Tabletowo,
+   dobreprogramy, Kapitan Hack and Mobirank; police and press warnings added more. Genuine messages come from the
    government's Alert RCB archive, the public SISMS feed of municipal notices, breach
    notifications companies sent to their customers, and genuine SMS that the same sources
    showed next to the fakes. Placeholders the sources used (`[LINK]`, `[24 cyfry]`, masked
@@ -175,7 +175,7 @@ a false alarm on a genuine bank code costs more trust than a missed scam.
 
 ## Known limitations
 
-- **Real data is still modest**: about 1 190 real Polish messages (≈930 SMS, 180 e-mails, 80
+- **Real data is still modest**: about 1 230 real Polish messages (≈950 SMS, 190 e-mails, 90
   chat/app notifications), half of them scams. Genuine Polish messages are mostly Alert RCB and
   municipal notices, plus breach notices and a few dozen genuine service messages, so the real
   test set measures false positives on official notices well but on bank, courier and personal

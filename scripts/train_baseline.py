@@ -54,6 +54,9 @@ BRANDS = {
     r"orange": ("orange.pl",), r"\bplay\b": ("play.pl",), r"\bplus\b": ("plus.pl",), r"t-mobile": ("t-mobile.pl",),
     r"netflix": ("netflix.com",), r"facebook|messenger": ("facebook.com", "fb.com"), r"whatsapp": ("whatsapp.com", "wa.me"),
 }
+SENDER_ADDRESS = re.compile(r"[\w.+-]+@([\w-]+(?:\.[\w-]+)+)")
+FREEMAIL = {"gmail.com", "wp.pl", "o2.pl", "onet.pl", "op.pl", "interia.pl", "interia.eu", "poczta.fm", "gazeta.pl", "tlen.pl",
+            "outlook.com", "hotmail.com", "live.com", "yahoo.com", "icloud.com", "ukr.net", "i.ua", "meta.ua"}
 META_WEIGHT = 0.3
 # Cues scams combine (on lower-case text without Polish letters; each is Polish, then Ukrainian).
 # Alone they are common in genuine messages too; the model learns how much each is worth, and
@@ -158,11 +161,27 @@ def features(rec: dict) -> dict[int, float]:
     feats[f"source.{rec['source']}"] += 1
     feats[f"len.{min(len(text) // 40, 10)}"] += 1
     sender = rec.get("sender", "")
+    # The strongest tells stay outside the length normalisation so long texts don't drown them.
+    meta: Counter = Counter()
     if sender:
         kind = "num" if re.fullmatch(r"[+\d\s-]{7,}", sender) else "name"
         feats["sender." + kind] += 1
-    # The strongest tells stay outside the length normalisation so long texts don't drown them.
-    meta: Counter = Counter()
+        # What an e-mail address says, never whether there is one (our genuine e-mails often lack it).
+        address = SENDER_ADDRESS.search(sender.lower())
+        if address:
+            domain = address.group(1)
+            feats["sender.tld." + domain.rsplit(".", 1)[-1]] += 1
+            if domain in FREEMAIL:
+                feats["sender.freemail"] += 1
+            if "-" in domain:
+                feats["sender.hyphen"] += 1
+            if any(c.isdigit() for c in domain):
+                feats["sender.digit"] += 1
+            display = norm(sender[: address.start()]).translate(DIACRITICS)
+            claimed = [d for pattern, domains in BRANDS.items() if re.search(pattern, display) for d in domains]
+            if claimed:
+                own = any(domain == d or domain.endswith("." + d) for d in claimed)
+                meta["sender.brand.own" if own else "sender.brand.other"] += 1
     official = [d for pattern, domains in BRANDS.items() if re.search(pattern, plain) for d in domains]
     if official and hosts:
         # A brand named in the text with a link elsewhere is the classic phishing tell.
@@ -313,6 +332,7 @@ def main() -> int:
                              "threshold on validation — quicker, but rests on few genuine messages)")
     parser.add_argument("--drop-cue", nargs="*", default=[], choices=sorted(CUES), help="leave out these cue features")
     parser.add_argument("--out", type=Path, default=DIST / "BASELINE.md", help="where to write the report")
+    parser.add_argument("--save", type=Path, help="also write the final model (bias, thresholds, non-zero weights) as JSON")
     parser.add_argument("--seed", type=int, default=13)
     args = parser.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
@@ -350,6 +370,16 @@ def main() -> int:
         t = pick_thresholds(held_out, args.max_fpr)
         basis = "validation"
     log("final model trained")
+    if args.save:
+        kept = {i: round(x, 6) for i, x in enumerate(w) if abs(x) >= 1e-5}
+        # Messages with the scores the saved weights give them, for checking a port of the model.
+        picked = sorted((r for r in test_rows if r["origin"] in OWN), key=lambda r: r["id"])
+        picked = [r for r in picked if r["label"] == "scam"][:15] + [r for r in picked if r["label"] == "legit"][:15]
+        golden = [{k: r[k] for k in ("lang", "source", "sender", "subject", "text")} |
+                  {"score": round(sigmoid(bias + sum(kept.get(i, 0.0) * v for i, v in features(r).items())), 6)} for r in picked]
+        model = {"dim": DIM, "meta_weight": META_WEIGHT, "bias": bias, "thresholds": t, "golden": golden, "weights": kept}
+        args.save.write_text(json.dumps(model, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        log(f"saved {len(kept)} weights to {args.save}")
     test = [(score(w, bias, f), r) for r, f in zip(test_rows, test_feats)]
 
     shown = ", ".join(f"{lang} {v:.3f}" for lang, v in t.items())
