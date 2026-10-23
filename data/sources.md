@@ -83,6 +83,7 @@ Main sources:
 | co-blik-scenarios | 2026-07-09 | SMS, WhatsApp, Messenger | Child asks BLIK for 500 zł; friend's hijacked account asks BLIK for 300 zł; "bank" asks for BLIK to "verify identity" (ATM cash-out). |
 | co-mastercard-points | 2025-11-26 | SMS (Mastercard) | Loyalty points expire in 24 h, >1000 zł cashback for credit cards, 1 zł "security" charge. |
 | co-santander-points | 2026-01-08 | SMS (Santander) | Non-existent "Santander points" expiring. |
+| co-callback-ref | 2025-10 | SMS (Binance, Binance-PL, Route, bank names, +48) | No link, a phone number to call: "your withdrawal code is…", "login detected from <country>", "device linked", each with "if it wasn't you, call +48 … REF: <code>"; the "consultant" then has the victim install an app and type in a 12-word wallet phrase. Also "reserve company account created" from a fake PKO. |
 | ing-warnings | 2026 | various | Fake bank staff with ID scans, "secure your money", courier collects card/phone, "loan taken in your name", telecom/energy arrears SMS. |
 
 ## Family and friends (`family`)

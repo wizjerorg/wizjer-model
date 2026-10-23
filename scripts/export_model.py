@@ -4,7 +4,8 @@
     python scripts/export_model.py dist/model.json dist/wizjer-baseline.bin
 
 File layout (little-endian): the 4 bytes "WZJ1", a uint32 header length, the header as UTF-8
-JSON (dim, scale, bias, meta_weight, thresholds, golden), then `dim` int16 values: weight i is
+JSON (dim, scale, bias, meta_weight, thresholds at 1% and "caution" thresholds at 5% false
+positives, golden), then `dim` int16 values: weight i is
 value i × scale. (Signed bytes would halve the size but round most weights to zero.) Features are computed exactly as in train_baseline.features(); the golden
 messages carry the scores this file gives them, for testing a port.
 
@@ -69,7 +70,8 @@ def main() -> int:
     golden = [g | {"score": round(score(small, model["bias"], tb.features(g)), 6)} for g in model.get("golden", [])]
 
     header = {"format": "wizjer-baseline/1", "dim": dim, "scale": scale, "bias": model["bias"],
-              "meta_weight": model["meta_weight"], "thresholds": model["thresholds"], "golden": golden}
+              "meta_weight": model["meta_weight"], "thresholds": model["thresholds"],
+              "thresholds_caution": model.get("thresholds_caution", {}), "golden": golden}
     blob = json.dumps(header, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     args.out.write_bytes(b"WZJ1" + struct.pack("<I", len(blob)) + blob + struct.pack(f"<{dim}h", *q))
 

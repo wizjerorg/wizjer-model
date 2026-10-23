@@ -38,3 +38,37 @@
 {"sender": "+48 791 280 637", "text": "Konsultant mBanku prosi o pilny kontakt w sprawie zablokowanego przelewu. Odpisz OK, a oddzwonimy w ciagu 5 minut.", "hard": true}
 {"sender": "ING", "text": "ING Bank Slaski: Wygasla zgoda na uslugi biometryczne. Zaloguj sie ponownie, aby ja odnowic: https://ingbank-biometria.top"}
 {"sender": "+48 727 006 482", "text": "Twój bank: kurier odbierze dziś Twoją kartę i telefon do zabezpieczenia w związku z wyłudzeniem. Przygotuj je i nie informuj nikogo – trwa postępowanie."}
+{"sender": "Binance", "text": "Twoj kod weryfikujacy wyplate to 604-918. Jesli to nie Ty zlecales wyplate, zadzwon natychmiast pod +48 22 398 17 40 REF: BNC4471", "types": ["bank", "investment"]}
+{"sender": "Binance-PL", "text": "Kod wyplaty to 772 105. Wyplata 0,42 BTC zostanie zrealizowana w ciagu 30 min. Nie Ty? Kontakt: +48 22 271 05 93 REF: PL-8812", "types": ["bank", "investment"]}
+{"sender": "Binance", "text": "Wykryto logowanie z Wietnamu (Hanoi) na Twoje konto. Jesli to nie Ty, zadzwon pilnie: +48 22 643 11 08 REF: VN221", "types": ["bank", "investment"]}
+{"sender": "Route", "text": "Nowe urzadzenie (Xiaomi 14T) zostalo polaczone z Twoim kontem. Kod aktywacji: 581-330. Jezeli to nie Ty, skontaktuj sie z dzialem bezpieczenstwa +48 22 307 92 64 REF: R-5503", "types": ["bank", "investment"]}
+{"sender": "Binance", "text": "Wykryto logowanie z Brazylii. Jeśli to nie Ty? Zadzwoń natychmiast pod +48 22 112 48 30 REF: BR0917", "types": ["bank", "investment"]}
+{"sender": "Binance-PL", "text": "Zlecenie wyplaty 18 450 USDT oczekuje na potwierdzenie. Jesli nie zlecales operacji, zadzwon +48 22 590 33 71 i podaj REF: TX4402", "types": ["bank", "investment"]}
+{"sender": "+48 729 401 556", "text": "Binance: Twoje konto zostalo zablokowane z powodu podejrzanej aktywnosci z Turcji. Odblokowanie wylacznie telefonicznie: +48 22 314 60 82 REF: TR-332", "types": ["bank", "investment"]}
+{"sender": "PKO BP", "text": "PKO BP: Wykryto logowanie do iPKO z urzadzenia w Rumunii. Jesli to nie Ty, zadzwon niezwlocznie +48 22 401 19 75 REF: SEC-7714"}
+{"sender": "mBank", "text": "mBank: zlecono przelew 4 980,00 PLN na nowy rachunek. Jesli to nie Ty, zadzwon pod +48 22 615 40 28 i podaj nr sprawy 77-210. Nie anuluj w aplikacji."}
+{"sender": "ING", "text": "ING: Kod autoryzacji wyplaty z bankomatu 3 000 PLN: 5521. Jezeli nie wyplacasz srodkow, skontaktuj sie z Wydzialem Bezpieczenstwa: +48 22 303 87 16 REF ING-449"}
+{"sender": "Pekao", "text": "Pekao: Twoje urzadzenie zostalo polaczone z kontem. Kod do aktywacji 830 219. Uwaga jesli to nie ty zadzwon pod +48 22 470 51 63 REF: PK5"}
+{"sender": "Santander", "text": "Zarejestrowana sprawa nr KD-58201 / Podejrzana aktywnosc. Opiekun sprawy: Marek Wojcik, ID 44102. Oczekuj kontaktu telefonicznego.", "hard": true, "campaign": "pl-callback-case"}
+{"sender": "+48 22 518 40 09", "text": "Dzial Bezpieczenstwa Banku: wstrzymalismy podejrzana transakcje 6 299 PLN. Konsultant oddzwoni w ciagu 15 min, prosimy nie rozlaczac sie i postepowac zgodnie z instrukcja.", "campaign": "pl-callback-case"}
+{"sender": "Asystent Bezp.", "text": "Asystent Wydzialu Bezpieczenstwa Tomasz Lewandowski; Nr. 58-104. Prosze nie przekazywac nikomu kodow BLIK do czasu kontaktu.", "hard": true, "campaign": "pl-callback-case"}
+{"sender": "PKO Bank", "text": "Utworzony rezerwowy rachunek ochronny: 50 1020 1013 0000 0102 0284 7731. Prosze postepowac zgodnie z instrukcja konsultanta. Zespol Bezpieczenstwa PKO Bank", "campaign": "pl-callback-case"}
+{"sender": "Binance", "text": "Your withdrawal code is 411-902. Kod wyplaty 411-902. Jesli to nie Ty, natychmiast zadzwon +48 22 205 73 18 REF:BN77", "types": ["bank", "investment"]}
+{"sender": "Revolut", "text": "Revolut: logowanie z nowego urzadzenia (Lagos, Nigeria). Nie rozpoznajesz? Zadzwon teraz +48 22 380 66 41, REF RV-2219"}
+{"sender": "zondacrypto", "text": "Twoj kod do wyplaty srodkow: 902 114. Jezeli to nie Ty, natychmiast skontaktuj sie z konsultantem +48 22 457 29 93 REF ZC-118", "types": ["bank", "investment"]}
+{"sender": "Binance", "text": "Twoje 12-wyrazowe haslo odzyskiwania: lunar fabric ocean tiger mild ripple honey tower ankle velvet crisp nature. Wpisz je w aplikacji zgodnie z instrukcja konsultanta.", "types": ["bank", "investment"]}
+{"sender": "Binance", "text": "Logowanie z nowego urzadzenia (Dzakarta, Indonezja) zostalo wstrzymane. W celu odblokowania lub zgloszenia naduzycia skontaktuj sie z konsultantem: +48 22 409 18 52, numer zgloszenia BX-30417.", "types": ["bank", "investment"]}
+{"sender": "Binance-PL", "text": "Twoje srodki zostaly przekazane do wyplaty na portfel zewnetrzny. Aby anulowac operacje, polacz sie z naszym zespolem: +48 22 188 64 07 (kod sprawy 5521).", "types": ["bank", "investment"]}
+{"sender": "Route", "text": "Potwierdzenie wyplaty 2 450 EUR. Nie zlecales? Masz 20 minut na kontakt z dzialem fraud: +48 22 336 90 14 REF 7Q2K", "types": ["bank", "investment"]}
+{"sender": "mBank", "text": "Na Twoje dane zlozono wniosek o kredyt 38 000 zl. Jesli go nie skladales, pilnie oddzwon do analityka: +48 22 250 71 39, sprawa nr 2026/10/884", "types": ["bank", "loan"], "campaign": "pl-callback-case"}
+{"sender": "+48 515 220 731", "text": "BIK: zarejestrowano zapytanie kredytowe na Twoj PESEL. Weryfikacja wylacznie telefonicznie pod numerem +48 22 293 47 18, kod weryfikacji 118-04.", "types": ["bank", "loan"], "campaign": "pl-callback-case"}
+{"sender": "PKO BP", "text": "Dyspozycja zmiany numeru telefonu dla Twojego konta zostala przyjeta. Jesli nie wydawales dyspozycji, skontaktuj sie natychmiast z doradca +48 22 470 13 62 (ID 84417).", "campaign": "pl-callback-case"}
+{"sender": "Santander", "text": "Bankowosc: podejrzana proba platnosci 3 199,00 EUR (Kraken). Platnosc zablokowana. W celu wyjasnienia zadzwon na nr +48 22 361 28 80 i podaj kod 4407."}
+{"sender": "zondacrypto", "text": "Wplynelo zadanie zamkniecia konta i wyplaty calego salda. Jezeli to pomylka, natychmiast zadzwon: +48 22 507 34 96. Numer referencyjny: ZC-9081", "types": ["bank", "investment"]}
+{"sender": "Bank", "text": "Twoja karta zostala tymczasowo zablokowana po 3 nieudanych platnosciach za granica. Odblokowanie u konsultanta: 22 615 40 77. Kod sprawy: KB-226", "campaign": "pl-callback-case"}
+{"sender": "ING", "text": "ING: do Twojego konta dodano nowego uzytkownika z uprawnieniami. Zglos naduzycie dzwoniac na +48 22 448 21 05 (czynne 24h), kod zgloszenia ING7781."}
+{"sender": "Revolut", "text": "Wykonano przelew 12 400 PLN na konto w Litwie. Aby cofnac transakcje, skontaktuj sie z nami pod +48 22 190 75 63. Nie korzystaj z aplikacji do czasu kontaktu."}
+{"sender": "Binance", "text": "Zmiana adresu e-mail na koncie: j***@proton.me. Jesli nie dokonywales zmiany, zadzwon do opiekuna konta: +48 22 395 02 86, kod: 66-913", "types": ["bank", "investment"]}
+{"sender": "Pekao", "text": "Pekao: aktywowano limit platnosci 20 000 PLN. Jezeli tego nie zlecales, kontakt z Biurem Bezpieczenstwa: 22 517 60 43 wew. 2, nr sprawy 11902.", "campaign": "pl-callback-case"}
+{"sender": "Kantor", "text": "Twoje srodki 7 800 USD oczekuja na wymiane. W przypadku braku potwierdzenia telefonicznego (+48 22 314 22 59) transakcja zostanie wykonana automatycznie.", "types": ["bank", "investment"]}
+{"sender": "Allegro Pay", "text": "Allegro Pay: zaciagnieto zobowiazanie 4 300 zl. Jesli to nie Ty, natychmiast zadzwon do opiekuna: +48 22 471 36 90 REF AP-552", "types": ["bank", "loan"], "campaign": "pl-callback-case"}

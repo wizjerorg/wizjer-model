@@ -10,3 +10,12 @@
 {"sender": "Policja", "text": "Policja ostrzega: oszusci dzwonia jako „wnuczek” lub „policjant”. Prawdziwy policjant nigdy nie prosi o pieniadze. Zadzwon na 112, jesli masz watpliwosci.", "hard": true}
 {"sender": "Allegro", "text": "Allegro: Nie wysylamy SMS-ow z linkami do nagrod ani konkursow. Wszystkie promocje znajdziesz w aplikacji Allegro.", "hard": true}
 {"sender": "T-Mobile", "text": "T-Mobile: Uruchomilismy ochrone przed falszywymi SMS-ami. Jesli link prowadzi do niebezpiecznej strony, zobaczysz ostrzezenie CERT.", "hard": true}
+{"sender": "mBank", "text": "mBank: dodano nowe urzadzenie do aplikacji mobilnej (Samsung S24) 12.10 o 18:42. Jesli to nie Ty, zadzwon na 801 300 800.", "hard": true}
+{"sender": "PKO BP", "text": "PKO BP: logowanie do iPKO z nowej przegladarki 14.10 09:12. Jesli to nie Ty, zadzwon pod 800 302 302 lub zablokuj dostep w IKO.", "hard": true}
+{"sender": "Pekao", "text": "Pekao: wstrzymalismy transakcje karta ...4410 na 1 299,00 PLN w SKLEP-ONLINE. Jesli to Ty, potwierdz w PeoPay. Jesli nie, zadzwon 801 365 365.", "hard": true}
+{"sender": "Millennium", "text": "Millennium: nowe logowanie do Millenetu (Chrome, Windows). Jesli to nie Ty, zablokuj dostep w aplikacji lub zadzwon 801 331 331.", "hard": true}
+{"sender": "Erste", "text": "Erste: dodano zaufane urzadzenie iPhone 15. Nie Ty? Zadzwon na infolinie 1 9999 (calodobowo).", "hard": true}
+{"sender": "Alior Bank", "text": "Alior Bank: zmieniono numer telefonu do kontaktu. Jesli to nie Ty, skontaktuj sie z nami pod nr 19 502.", "hard": true}
+{"sender": "ING", "text": "ING: zalogowano do Moje ING z nowego urzadzenia. Jesli to nie Ty, zadzwon na 801 222 222. Pamietaj: nigdy nie prosimy o instalowanie aplikacji ani podawanie kodow przez telefon.", "hard": true}
+{"sender": "PKO BP", "text": "PKO BP: Uwaga na oszustow! Nasi pracownicy nigdy nie prosza o przelew na \"bezpieczny\" lub \"rezerwowy\" rachunek ani o instalowanie aplikacji. W razie watpliwosci rozlacz sie i zadzwon 800 302 302.", "hard": true}
+{"sender": "Revolut", "text": "Revolut: zaloguj sie w aplikacji, aby sprawdzic nowe logowanie z urzadzenia iPad. Jesli to nie Ty, zablokuj konto w aplikacji. Nie dzwonimy w sprawie bezpieczenstwa srodkow.", "hard": true}

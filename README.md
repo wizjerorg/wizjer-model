@@ -88,7 +88,8 @@ python scripts/train_baseline.py
 ```
 
 To use the model in the app, save it and pack it into one 2 MB file (16-bit weights, the
-thresholds, and test messages with their scores for checking a port of the feature code):
+thresholds, softer "be careful" thresholds that flag up to 5% of genuine messages, and test
+messages with their scores for checking a port of the feature code):
 
 ```bash
 python scripts/train_baseline.py --save dist/model.json

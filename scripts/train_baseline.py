@@ -32,6 +32,7 @@ import re
 import sys
 import time
 import unicodedata
+from array import array
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -53,6 +54,15 @@ BRANDS = {
     r"\bpge\b": ("pge.pl", "gkpge.pl"), r"tauron": ("tauron.pl",), r"energa": ("energa.pl",), r"\benea\b": ("enea.pl",),
     r"orange": ("orange.pl",), r"\bplay\b": ("play.pl",), r"\bplus\b": ("plus.pl",), r"t-mobile": ("t-mobile.pl",),
     r"netflix": ("netflix.com",), r"facebook|messenger": ("facebook.com", "fb.com"), r"whatsapp": ("whatsapp.com", "wa.me"),
+    r"bnp paribas": ("bnpparibas.pl",), r"credit agricole": ("credit-agricole.pl",), r"velobank": ("velobank.pl",),
+    r"revolut": ("revolut.com",), r"binance": ("binance.com",), r"zondacrypto|zonda": ("zondacrypto.com",),
+    r"booking": ("booking.com",), r"e-?toll": ("etoll.gov.pl",), r"\bnfz\b|pacjent\.gov": ("nfz.gov.pl", "pacjent.gov.pl"),
+    r"apple|icloud": ("apple.com", "icloud.com"), r"microsoft|outlook|office 365": ("microsoft.com", "live.com", "office.com", "outlook.com"),
+    r"paypal": ("paypal.com",), r"\bups\b": ("ups.com",), r"\bgls\b": ("gls-group.eu", "gls-pl.com"), r"fedex": ("fedex.com",),
+    r"orlen": ("orlen.pl",), r"\bpzu\b": ("pzu.pl",), r"steam": ("steampowered.com", "steamcommunity.com"),
+    r"privatbank|приватбанк": ("privatbank.ua",), r"monobank": ("monobank.ua",), r"nova poshta|нова пошта": ("novaposhta.ua",),
+    r"ukrposhta|укрпошта": ("ukrposhta.ua",), r"\bdiia\b|(додат|застосун|портал)\w* «?дія": ("diia.gov.ua",),
+    r"ощадбанк|oschadbank": ("oschadbank.ua",),
 }
 SENDER_ADDRESS = re.compile(r"[\w.+-]+@([\w-]+(?:\.[\w-]+)+)")
 FREEMAIL = {"gmail.com", "wp.pl", "o2.pl", "onet.pl", "op.pl", "interia.pl", "interia.eu", "poczta.fm", "gazeta.pl", "tlen.pl",
@@ -87,7 +97,7 @@ CUES = {
                            r"якщо це (були )?не ви|служб\w* безпеки|підозріл\w* (операц|транзакц|вхід|активн|спроб)|спроб\w* входу|очікуйте (на )?дзвінк|зателефонує|"
                            r"співробітник\w* (банку|служби)|безпечн\w* рахун|не кладіть слухавку"),
     # "Someone posted your (edited) photos" lures and sextortion.
-    "exposure": re.compile(r"(twoje|twoich|twoimi|twojego) (przerobion\w* |prywatne |nagie |intymne )?(zdjec|fotk|fotek|nagran|filmik)|przerobi\w* (zdjec|fotk)|nagie|intymn|"
+    "exposure": re.compile(r"(twoje|twoich|twoimi|twojego) (przerobion\w* |prywatne |nagie |intymne )?(zdjec|fotk|fotek|nagran|filmik)|przer[oa]bi\w* (zdjec|fotk|twoje)|nagie|intymn|"
                            r"kompromit|nagral\w* (cie|ciebie)|wrzucil\w* (twoje|tw)|"
                            r"ваші (інтимн\w* |приватн\w* )?(фото|відео|світлин)|інтимн|компромат"),
 }
@@ -228,15 +238,15 @@ def sigmoid(z: float) -> float:
     return 1 / (1 + math.exp(-z)) if z > -35 else 0.0
 
 
-Features = tuple[tuple[int, ...], tuple[float, ...]]
+Features = tuple[array, array]
 
 
 def featurize(rows: list[dict]) -> list[Features]:
-    """Features of every row, computed once (as index and value tuples, which take less memory)."""
+    """Features of every row, computed once (as packed index and value arrays: a fifth of the memory of tuples)."""
     out = []
     for r in rows:
         f = features(r)
-        out.append((tuple(f), tuple(f.values())))
+        out.append((array("I", f), array("d", f.values())))
     return out
 
 
@@ -370,6 +380,8 @@ def main() -> int:
         t = pick_thresholds(held_out, args.max_fpr)
         basis = "validation"
     log("final model trained")
+    # A softer "be careful" level for the app, flagging up to 5% of genuine messages.
+    caution = pick_thresholds(held_out, max(args.max_fpr, 0.05))
     if args.save:
         kept = {i: round(x, 6) for i, x in enumerate(w) if abs(x) >= 1e-5}
         # Messages with the scores the saved weights give them, for checking a port of the model.
@@ -377,7 +389,8 @@ def main() -> int:
         picked = [r for r in picked if r["label"] == "scam"][:15] + [r for r in picked if r["label"] == "legit"][:15]
         golden = [{k: r[k] for k in ("lang", "source", "sender", "subject", "text")} |
                   {"score": round(sigmoid(bias + sum(kept.get(i, 0.0) * v for i, v in features(r).items())), 6)} for r in picked]
-        model = {"dim": DIM, "meta_weight": META_WEIGHT, "bias": bias, "thresholds": t, "golden": golden, "weights": kept}
+        model = {"dim": DIM, "meta_weight": META_WEIGHT, "bias": bias, "thresholds": t, "thresholds_caution": caution,
+                 "golden": golden, "weights": kept}
         args.save.write_text(json.dumps(model, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         log(f"saved {len(kept)} weights to {args.save}")
     test = [(score(w, bias, f), r) for r, f in zip(test_rows, test_feats)]
@@ -412,6 +425,11 @@ def main() -> int:
         fixed = metrics(subsets[name], t_test)
         lines.append(f"| {name} | {m['n']} | {m['recall']:.1%} | {m['fpr']:.1%} | {m['precision']:.1%} | {m['fp']} | {m['fn']} | "
                      f"{m['auc']:.3f} | {fixed['recall']:.1%} |")
+
+    soft = [f"{name} {metrics(subsets[name], caution)['recall']:.1%} of scams, {metrics(subsets[name], caution)['fpr']:.1%} of genuine"
+            for name in ("pl real", "pl real sms", "pl real email", "pl real notification", "pl external") if subsets.get(name)]
+    lines += ["", f"\"Be careful\" level (thresholds flagging up to 5% of genuine messages, saved as `thresholds_caution`): "
+              + "; ".join(soft) + "."]
 
     if args.cv:
         # Held-out scores also cover the written messages and Ukrainian, which test (real only) can't.

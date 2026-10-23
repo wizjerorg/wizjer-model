@@ -39,7 +39,7 @@ Each line is one JSON object. Fields implied by the path are **not** repeated in
 | `app`      | `notification` | App that showed the notification (`WhatsApp`, `Messenger`, `Telegram`, `Viber`, `OLX`, …). |
 | `types`    | optional | Scam types when the message fits more than one, e.g. `["government", "parcel_fee"]`. Defaults to the file's category. Not allowed for `legit`. |
 | `hard`     | optional | `true` for deliberately confusable examples: genuine messages that look alarming, or scams with no obvious red flags. Used for separate evaluation. |
-| `campaign` | optional | Short id grouping variants of the same campaign so they always land in the same split. |
+| `campaign` | optional | Short id grouping variants of the same campaign so they always land in the same split. Use it only for close variants of one message: a written group that touches a real test message is left out of the build whole. |
 | `note`     | optional | Free-text note for reviewers (not used in training). |
 | `script`   | optional | `"latin"` for Ukrainian typed in Latin letters (transliterated SMS such as "Vam dostupna vyplata"); otherwise Ukrainian must be mostly Cyrillic. |
 | `source_url` | `real` only, required | The public page the message comes from. |

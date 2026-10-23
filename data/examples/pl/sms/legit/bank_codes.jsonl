@@ -26,3 +26,7 @@
 {"sender": "Citi Handlowy", "text": "Citi Handlowy: Kod jednorazowy 662931. Uzyj go do zalogowania w Citi Mobile. Kod wazny 3 minuty."}
 {"sender": "PKO BP", "text": "PKO BP: Kod do zmiany danych osobowych: 410 772. Jesli nie zmieniasz danych, nie wpisuj go nigdzie.", "hard": true}
 {"sender": "mBank", "text": "mBank: Prosba o potwierdzenie operacji czeka w aplikacji. Otworz mBank i sprawdz szczegoly przed akceptacja."}
+{"sender": "Binance", "text": "[Binance] Twoj kod weryfikacyjny: 482193. Kod jest wazny 10 minut. Nigdy nie udostepniaj go nikomu, rowniez pracownikom Binance.", "hard": true}
+{"sender": "Revolut", "text": "Kod Revolut: 183-201. Nikomu go nie podawaj, nawet osobie, ktora przedstawia sie jako pracownik Revolut.", "hard": true}
+{"sender": "zondacrypto", "text": "zondacrypto: Kod potwierdzajacy wyplate: 739104. Jesli nie zlecales wyplaty, zmien haslo i zablokuj konto w aplikacji.", "hard": true}
+{"sender": "ING", "text": "ING: Kod do wyplaty BLIK 300,00 PLN z bankomatu: 4821. Jesli nie wyplacasz pieniedzy, nie podawaj kodu nikomu.", "hard": true}
