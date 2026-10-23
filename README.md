@@ -4,10 +4,14 @@ Open data and code for the on-device scam detector in the [Wizjer](https://wizje
 which warns people in Poland about scam SMS messages, notifications and e-mails.
 
 The model runs **entirely on the phone**: messages are analysed locally and never sent
-anywhere. This repository holds everything needed to rebuild it — the training data, the
-scripts that check and package it, and (soon) the training and export code.
+anywhere. This repository holds what's needed to rebuild it — the training data, the scripts
+that check and package it, and the training and export code.
 
-> **Status:** dataset v0.1. Training, distillation and LiteRT export come next.
+> **Status:** dataset v0.2 (about 1 260 real and 1 700 written messages, plus open corpora) and
+> a first model, a small logistic regression that now ships in the Wizjer app and runs on the
+> phone. On real Polish test messages it catches 91% of scam SMS without flagging a single
+> genuine one; scam e-mails and chat messages are harder (see the data card's limitations).
+> Next: more real e-mail, chat and Ukrainian messages.
 
 ## What's inside
 
@@ -24,7 +28,8 @@ scripts/
 ├── build.py            Validate, de-duplicate and split → dist/
 ├── augment.py          Training-only variants (used by build.py --augment)
 ├── fetch_external.py   Download and convert the third-party datasets
-├── train_baseline.py   A small reference classifier and its error report → dist/BASELINE.md
+├── train_baseline.py   The model: training, thresholds and its error report → dist/BASELINE.md
+├── export_model.py     Pack the trained model into one file for the app
 ├── make_pools.py       Refresh the look-alike domains
 ├── collect_rcb.py      Genuine Alert RCB messages from gov.pl
 └── collect_sisms.py    Genuine municipal notices from the public SISMS feed
@@ -115,6 +120,17 @@ government and municipal messages.
 - Messages that users of the app report are **never** added to this public dataset.
 - Third-party corpora are downloaded on demand and keep their own licences; they are not
   redistributed here.
+
+### Chat messages that aren't published
+
+Besides everything above, the model in the app was also trained on several thousand real chat
+messages written by people in informal group chats. They teach it what ordinary conversation
+looks like (slang, typos, swearing, jokes about money and prizes), so that everyday chat isn't
+flagged. They were anonymised when collected: mentions became invented first names, messages
+with a phone number or e-mail address were left out, and authors were kept only as an
+irreversible code. Even so, they are **kept off this repository to protect the people who wrote
+them**, and are never published. Building without them gives a very similar model: in our tests
+they changed the results only slightly.
 
 ## Contributing
 

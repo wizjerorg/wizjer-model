@@ -107,7 +107,9 @@ Ordinary marketing that is merely annoying is **legit**. Wizjer warns about frau
    transcripts and internet chat and forum posts from the National Corpus of Polish (NKJP-1M,
    CC BY), and comments from Polish Wikipedia user talk pages (CC BY-SA). This is unscripted
    human writing, so that plain conversation — "chyba jestem w tarapatach", "oddzwoń jak
-   możesz", "możesz mi pomóc z tym artykułem?" — is not mistaken for a scam. Written
+   możesz", "możesz mi pomóc z tym artykułem?" — is not mistaken for a scam. The model in the
+   app was also trained on real group-chat messages that are anonymised and kept local, never
+   published (see the main README). Written
    family, friends, coworker and marketplace chats (with typos, slang and no diacritics) cover
    the messages people actually exchange, including the genuine versions of scam scenarios
    (a real "new number" text, a child asking for money with context, a buyer asking "is it
