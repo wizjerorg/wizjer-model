@@ -96,6 +96,10 @@ python scripts/train_baseline.py --save dist/model.json
 python scripts/export_model.py dist/model.json dist/wizjer-baseline.bin
 ```
 
+Then copy `dist/wizjer-baseline.bin` to `app/src/main/assets/model/` in
+[wizjer-android](https://github.com/wizjerorg/wizjer-android), whose `detection/model/` code computes
+the same features in Kotlin (its tests check the scores against the ones stored in the file).
+
 Other tools: `scripts/make_pools.py` refreshes the look-alike domains from CERT Polska's public
 list; `scripts/collect_rcb.py` and `scripts/collect_sisms.py --hours 24` collect genuine
 government and municipal messages.
