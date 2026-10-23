@@ -53,7 +53,7 @@ BRANDS = {
     r"mobywatel|gov\.pl|profil zaufany|urzad skarbowy|ministerstw|\bzus\b|\bkas\b": ("gov.pl", "zus.pl", "podatki.gov.pl", "mobywatel.gov.pl"),
     r"\bpge\b": ("pge.pl", "gkpge.pl"), r"tauron": ("tauron.pl",), r"energa": ("energa.pl",), r"\benea\b": ("enea.pl",),
     r"orange": ("orange.pl",), r"\bplay\b": ("play.pl",), r"\bplus\b": ("plus.pl",), r"t-mobile": ("t-mobile.pl",),
-    r"netflix": ("netflix.com",), r"facebook|messenger": ("facebook.com", "fb.com"), r"whatsapp": ("whatsapp.com", "wa.me"),
+    r"netflix": ("netflix.com",), r"facebook|messenger": ("facebook.com", "fb.com"), r"whatsapp": ("whatsapp.com",),
     r"bnp paribas": ("bnpparibas.pl",), r"credit agricole": ("credit-agricole.pl",), r"velobank": ("velobank.pl",),
     r"revolut": ("revolut.com",), r"binance": ("binance.com",), r"zondacrypto|zonda": ("zondacrypto.com",),
     r"booking": ("booking.com",), r"e-?toll": ("etoll.gov.pl",), r"\bnfz\b|pacjent\.gov": ("nfz.gov.pl", "pacjent.gov.pl"),
@@ -64,6 +64,10 @@ BRANDS = {
     r"ukrposhta|укрпошта": ("ukrposhta.ua",), r"\bdiia\b|(додат|застосун|портал)\w* «?дія": ("diia.gov.ua",),
     r"ощадбанк|oschadbank": ("oschadbank.ua",),
 }
+# Genuine services whose links lead to any person: a payment page (paypal.me/anyone) or a chat
+# (wa.me/number). Not a brand's own site and not a fake one, so they never count for or against a
+# brand, and a brand named only inside them ("paypal.me/kuba") isn't a mention.
+PERSONAL_LINK_HOSTS = ("paypal.me", "revolut.me", "wa.me", "t.me")
 SENDER_ADDRESS = re.compile(r"[\w.+-]+@([\w-]+(?:\.[\w-]+)+)")
 FREEMAIL = {"gmail.com", "wp.pl", "o2.pl", "onet.pl", "op.pl", "interia.pl", "interia.eu", "poczta.fm", "gazeta.pl", "tlen.pl",
             "outlook.com", "hotmail.com", "live.com", "yahoo.com", "icloud.com", "ukr.net", "i.ua", "meta.ua"}
@@ -139,6 +143,14 @@ def hashed(token: str) -> int:
     return int.from_bytes(hashlib.blake2b(token.encode(), digest_size=8).digest(), "little") % DIM
 
 
+def host_of(url: str) -> str:
+    return re.sub(r"^(?:https?://)?(?:www\.)?", "", url).split("/")[0].rstrip(".,:;!?)")
+
+
+def personal(host: str) -> bool:
+    return any(host == p or host.endswith("." + p) for p in PERSONAL_LINK_HOSTS)
+
+
 def features(rec: dict) -> dict[int, float]:
     text = norm(rec["text"])
     plain = text.translate(DIACRITICS)
@@ -156,7 +168,7 @@ def features(rec: dict) -> dict[int, float]:
     if rec.get("subject"):
         for w in re.findall(r"\w+", norm(rec["subject"]).translate(DIACRITICS)):
             feats["s" + w] += 1
-    hosts = [re.sub(r"^(?:https?://)?(?:www\.)?", "", u).split("/")[0].rstrip(".,:;!?)") for u in URL.findall(text)]
+    hosts = [host_of(u) for u in URL.findall(text)]
     for host in hosts:
         feats["url"] += 1
         feats["tld." + host.rsplit(".", 1)[-1]] += 1
@@ -192,10 +204,12 @@ def features(rec: dict) -> dict[int, float]:
             if claimed:
                 own = any(domain == d or domain.endswith("." + d) for d in claimed)
                 meta["sender.brand.own" if own else "sender.brand.other"] += 1
-    official = [d for pattern, domains in BRANDS.items() if re.search(pattern, plain) for d in domains]
-    if official and hosts:
+    brand_text = URL.sub(lambda m: " " if personal(host_of(m.group())) else m.group(), plain)
+    official = [d for pattern, domains in BRANDS.items() if re.search(pattern, brand_text) for d in domains]
+    branded = [h for h in hosts if not personal(h)]
+    if official and branded:
         # A brand named in the text with a link elsewhere is the classic phishing tell.
-        own = all(any(h == d or h.endswith("." + d) for d in official) for h in hosts)
+        own = all(any(h == d or h.endswith("." + d) for d in official) for h in branded)
         meta["brand.link.own" if own else "brand.link.other"] += 1
     meta["mixed.script"] += sum(1 for w in text.split() if CYRILLIC.search(w) and LATIN.search(w))
     meta["shortener"] += len(SHORTENER.findall(text))

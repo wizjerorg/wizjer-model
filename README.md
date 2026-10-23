@@ -7,7 +7,7 @@ The model runs **entirely on the phone**: messages are analysed locally and neve
 anywhere. This repository holds what's needed to rebuild it — the training data, the scripts
 that check and package it, and the training and export code.
 
-> **Status:** dataset v0.2 (about 1 260 real and 1 700 written messages, plus open corpora) and
+> **Status:** dataset v0.2 (about 1 260 real and 1 800 written messages, plus open corpora) and
 > a first model, a small logistic regression that now ships in the Wizjer app and runs on the
 > phone. On real Polish test messages it catches 91% of scam SMS without flagging a single
 > genuine one; scam e-mails and chat messages are harder (see the data card's limitations).
@@ -30,6 +30,7 @@ scripts/
 ├── fetch_external.py   Download and convert the third-party datasets
 ├── train_baseline.py   The model: training, thresholds and its error report → dist/BASELINE.md
 ├── export_model.py     Pack the trained model into one file for the app
+├── release_model.py    Publish it as a GitHub release, which the app downloads by itself
 ├── make_pools.py       Refresh the look-alike domains
 ├── collect_rcb.py      Genuine Alert RCB messages from gov.pl
 └── collect_sisms.py    Genuine municipal notices from the public SISMS feed
@@ -76,7 +77,8 @@ real data was gathered.
 ## Baseline
 
 `scripts/train_baseline.py` trains a small logistic-regression classifier (character and word
-n-grams plus a few message features: links, brand/link mismatch, an e-mail sender whose
+n-grams plus a few message features: links, brand/link mismatch (payment and chat links such as
+paypal.me or wa.me lead to any person, so they count for no brand), an e-mail sender whose
 address doesn't match the brand it names, look-alike letters, and Polish and Ukrainian cues such
 as urgency, payment, code requests, attachments and "call our security department") on `dist/`.
 The decision thresholds, per language and per channel
@@ -101,9 +103,20 @@ python scripts/train_baseline.py --save dist/model.json
 python scripts/export_model.py dist/model.json dist/wizjer-baseline.bin
 ```
 
-Then copy `dist/wizjer-baseline.bin` to `app/src/main/assets/model/` in
-[wizjer-android](https://github.com/wizjerorg/wizjer-android), whose `detection/model/` code computes
-the same features in Kotlin (its tests check the scores against the ones stored in the file).
+Then publish it as a release (needs the GitHub CLI, `gh`, logged in):
+
+```bash
+python scripts/release_model.py            # tag model-YYYY.MM.DD; --dry-run to check first
+```
+
+The release carries `wizjer-baseline.bin`, the full-precision `model.json` and `BASELINE.md`, so
+anyone can download the model. The [Wizjer app](https://github.com/wizjerorg/wizjer-android)
+checks the latest release once a day and switches to a newer model by itself, after checking on
+the phone that the file reproduces its own test scores (its `detection/model/` code computes the
+same features in Kotlin). If `features()` changes, the app's Kotlin port has to change first:
+older apps refuse a model they can't reproduce and keep the one they have. To ship a model inside
+the app as well, copy `dist/wizjer-baseline.bin` to `app/src/main/assets/model/` there and put
+the release tag in `assets/model/version.txt`.
 
 Other tools: `scripts/make_pools.py` refreshes the look-alike domains from CERT Polska's public
 list; `scripts/collect_rcb.py` and `scripts/collect_sisms.py --hours 24` collect genuine

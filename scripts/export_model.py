@@ -69,6 +69,13 @@ PARITY = [
     {"lang": "pl", "source": "notification", "sender": "", "subject": "",
      "text": "ŻÓŁĆ   ĘĄŚ — ΣΟΦΟΣ ﬁnał №5 ①②③ www.Example.pl/Ścieżka)."},
     {"lang": "pl", "source": "sms", "sender": "", "subject": "", "text": "ok"},
+    # Personal links: no brand mention inside them, never for or against a brand named elsewhere.
+    {"lang": "pl", "source": "notification", "sender": "Kuba", "subject": "",
+     "text": "oddaj mi za pizze paypal.me/kubanowak/25 albo https://revolut.me/kuba12"},
+    {"lang": "pl", "source": "notification", "sender": "Anna", "subject": "",
+     "text": "Zaloguj się do PayPal: https://paypal-konto.top/login albo zapłać na paypal.me/anna"},
+    {"lang": "pl", "source": "sms", "sender": "", "subject": "",
+     "text": "Praca! Napisz na WhatsApp: wa.me/48123456789 lub t.me/praca_hr"},
 ]
 
 
